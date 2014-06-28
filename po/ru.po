@@ -1,0 +1,1226 @@
+# KTranslator Generated File
+
+# EmelFM 0.8.0.
+# Copyright (C) 2000 Free Software Foundation, Inc.
+# Konstantin Volckov<goldhead@linux.ru.net>, 2000.
+#
+#: ../window.c:132 ../window.c:155
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: emelfm 0.8.0\n"
+"POT-Creation-Date: 2000-10-09 22:16-0400\n"
+"PO-Revision-Date: 2000-10-09 22:16-0400\n"
+"Last-Translator: Konstantin Volckov <goldhead@linux.ru.net>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../plugins/rename_ext.c:112
+msgid ""
+"This allows you to replace substrings\n"
+"in filenames with new strings.\n"
+"\n"
+"Example: (From: .jpg  To: .jpeg)"
+msgstr ""
+"Это позволит Вам замещать строки\n"
+"в именах файлов другими.\n"
+"\n"
+"Например: (С: .jpg  На: .jpeg)"
+
+#: ../plugins/rename_ext.c:121
+msgid "From: "
+msgstr "С: "
+
+#: ../plugins/rename_ext.c:127
+msgid "To: "
+msgstr "На: "
+
+#: ../plugins/rename_ext.c:133
+msgid "Apply to all files in directory"
+msgstr "Применить ко всем файлам в каталоге"
+
+#: ../add_ext_dialog.c:129 ../button_dialog.c:228 ../date_filter_dialog.c:175
+#: ../filename_filter_dialog.c:109 ../filetype_action_dialog.c:179
+#: ../fnkey_dialog.c:208 ../ownership_dialog.c:230 ../permissions_dialog.c:297
+#: ../plugin_info_dialog.c:88 ../plugins/glob.c:163
+#: ../plugins/rename_ext.c:136 ../size_filter_dialog.c:164
+#: ../toolbar_button_dialog.c:201 ../user_command_dialog.c:116
+#: ../user_prompt.c:98
+msgid "Ok"
+msgstr "Да"
+
+#: ../add_ext_dialog.c:130 ../button_dialog.c:230 ../config_dialog.c:906
+#: ../confirm_dialog.c:83 ../date_filter_dialog.c:176
+#: ../filename_filter_dialog.c:110 ../filetype_action_dialog.c:181
+#: ../filetype_dialog.c:295 ../fnkey_dialog.c:210
+#: ../init_filetype_dialog.c:140 ../open_query_dialog.c:90
+#: ../ownership_dialog.c:232 ../permissions_dialog.c:299
+#: ../plugin_info_dialog.c:89 ../plugins/glob.c:164 ../plugins/pack.c:131
+#: ../plugins/rename_ext.c:137 ../size_filter_dialog.c:165
+#: ../toolbar_button_dialog.c:203 ../user_command_dialog.c:118
+#: ../user_prompt.c:99
+msgid "Cancel"
+msgstr "Отмена"
+
+#: ../plugins/for_each.c:32
+msgid ""
+"Macros:\n"
+"%f = Filename\n"
+"%d = Active Directory\n"
+"%D = Inactive Directory\n"
+"%{Prompt message} = Prompt user for input\n"
+"\n"
+"Enter an action to execute on each\n"
+"selected file:"
+msgstr ""
+"Макросы:\n"
+"%f = Имя файла\n"
+"%d = Активный каталог\n"
+"%D = Неактивный каталог\n"
+"%{Сообщение запроса} = Запросить ввод у пользователя\n"
+"\n"
+"Введите действие для выполнения над каждым\n"
+"выбранным файлом:"
+
+#: ../plugins/glob.c:130
+msgid "Glob Select: "
+msgstr "Глобальный выбор: "
+
+#: ../filename_filter_dialog.c:97 ../plugins/glob.c:153
+msgid "Example: *.c,*.h"
+msgstr "Например: *.c,*.h"
+
+#: ../filename_filter_dialog.c:100 ../plugins/glob.c:156
+msgid "Invert"
+msgstr "Инвертировать"
+
+#: ../filename_filter_dialog.c:103 ../plugins/glob.c:158
+msgid "Case Sensitive"
+msgstr "С учетом регистра"
+
+#: ../plugins/glob.c:161
+msgid "Select files that DO NOT match the given mask"
+msgstr "Выбрать файлы, НЕ СОВПАДАЮЩИЕ с указанной маской"
+
+#: ../plugins/clone.c:39
+msgid ""
+"This allows you to copy a file\n"
+"to the current directory rather\n"
+"than the opposite directory.\n"
+"\n"
+"Enter New Filename: "
+msgstr ""
+"Это позволит вам копировать файл\n"
+"в текущий каталог в отличие от\n"
+"противоположного каталога.\n"
+"\n"
+"Введите новое имя файла: "
+
+#: ../plugins/pack.c:116
+msgid "Archive Options: "
+msgstr "Опции архивирования:"
+
+#: ../plugin_info_dialog.c:80 ../plugins/pack.c:117
+msgid "Filename: "
+msgstr "Имя файла:"
+
+#: ../plugins/pack.c:123
+msgid ".tar.gz"
+msgstr ""
+
+#: ../plugins/pack.c:124
+msgid ".tar.bz2"
+msgstr ""
+
+#: ../plugins/pack.c:125
+msgid ".tar"
+msgstr ""
+
+#: ../plugins/pack.c:126
+msgid ".zip"
+msgstr ""
+
+#: ../plugins/pack.c:130
+msgid "Pack"
+msgstr "Упаковать"
+
+#: ../add_ext_dialog.c:39
+msgid "Please select a filetype first\n"
+msgstr "Выберите сначала имя файла\n"
+
+#: ../add_ext_dialog.c:85 ../config_dialog.c:1061
+msgid "Extensions"
+msgstr "Расширения"
+
+#: ../add_ext_dialog.c:86 ../config_dialog.c:1062
+msgid "Description"
+msgstr "Описание"
+
+#: ../add_ext_dialog.c:90
+msgid "No Filetypes exist\n"
+msgstr "Файловый тип не существует\n"
+
+#: ../add_ext_dialog.c:106
+#, c-format
+msgid "Choose filetype for extension: %s"
+msgstr "Выберите файловый тип для расширения: %s"
+
+#: ../callbacks.c:85 ../callbacks.c:176 ../callbacks.c:464
+#, c-format
+msgid "Enter new filename for: %s"
+msgstr "Введите новое имя файла для: %s"
+
+#: ../callbacks.c:301
+#, c-format
+msgid "Enter name for symlink to: %s"
+msgstr "Введите имя для сим. ссылки на: %s"
+
+#: ../callbacks.c:509
+msgid "Enter name for new directory:"
+msgstr "Введите имя для нового каталога:"
+
+#: ../callbacks.c:626
+msgid "Enter a filename or partial filename to find:"
+msgstr "Введите полное или частичное имя файла для поиска:"
+
+#: ../callbacks.c:784
+msgid "Enter command:"
+msgstr "Введите команду:"
+
+#: ../config_dialog.c:368
+msgid "Choose Color"
+msgstr "Выберите цвет"
+
+#: ../config_dialog.c:427
+msgid "Choose Font"
+msgstr "Выберите шрифт"
+
+#: ../config_dialog.c:776
+msgid "Please select the module you want to add."
+msgstr "Выберите модуль для добавления."
+
+#: ../config_dialog.c:905
+msgid "OK"
+msgstr "Да"
+
+#: ../config_dialog.c:914
+msgid "Configuration"
+msgstr "Настройка"
+
+#: ../config_dialog.c:939
+msgid "General - Page 1"
+msgstr "Основная - 1"
+
+#: ../config_dialog.c:940
+msgid "Options: "
+msgstr "Параметры:"
+
+#: ../config_dialog.c:942
+msgid "Confirm Delete"
+msgstr "Подтверждать удаление"
+
+#: ../config_dialog.c:946
+msgid "Confirm Overwrite"
+msgstr "Подтверждать перезапись"
+
+#: ../config_dialog.c:950
+msgid "Auto refresh"
+msgstr "Автообновление"
+
+#: ../config_dialog.c:954
+msgid "Directories: "
+msgstr "Каталоги:"
+
+#: ../config_dialog.c:956
+msgid "Left Startup Dir: "
+msgstr "Стартовый каталог левой панели: "
+
+#: ../config_dialog.c:961 ../config_dialog.c:969
+msgid "Last Active Directory"
+msgstr "Последний активный каталог"
+
+#: ../config_dialog.c:964
+msgid "Right Startup Dir: "
+msgstr "Стартовый каталог правой панели: "
+
+#: ../config_dialog.c:978
+msgid "General - Page 2"
+msgstr "Основная - 2"
+
+#: ../config_dialog.c:979
+msgid "Commands: "
+msgstr "Команды:"
+
+#: ../config_dialog.c:980
+msgid "Viewer Command: "
+msgstr "Команды просмотра: "
+
+#: ../config_dialog.c:984
+msgid "Use internal viewer"
+msgstr "Использовать встроенный просмотр"
+
+#: ../config_dialog.c:989
+msgid "Xterm Command: "
+msgstr "Команда Xterm: "
+
+#: ../config_dialog.c:993
+msgid "Histories: "
+msgstr "История:"
+
+#: ../config_dialog.c:994
+msgid "Directory History Size: "
+msgstr "Размер истории для каталога: "
+
+#: ../config_dialog.c:998
+msgid "Command History Size: "
+msgstr "Размер истории для команд: "
+
+#: ../config_dialog.c:1004
+msgid "Misc.: "
+msgstr "Разн.:"
+
+#: ../config_dialog.c:1006
+msgid "Expanded \"Right-Click\" menu"
+msgstr "Расширенное меню \"Right-Click\""
+
+#: ../config_dialog.c:1010
+msgid "Use Vi keys"
+msgstr "Использовать клавиши Vi"
+
+#: ../config_dialog.c:1014
+msgid "Columns"
+msgstr "Колонки"
+
+#: ../config_dialog.c:1032 ../config_dialog.c:1035
+msgid "Bookmarks"
+msgstr "Закладки"
+
+#: ../config_dialog.c:1053
+msgid "Up"
+msgstr "Вверх"
+
+#: ../config_dialog.c:1054
+msgid "Down"
+msgstr "Вниз"
+
+#: ../config_dialog.c:1055 ../config_dialog.c:1087 ../config_dialog.c:1117
+#: ../config_dialog.c:1150 ../config_dialog.c:1208 ../config_dialog.c:1236
+#: ../filetype_dialog.c:290 ../permissions_dialog.c:290
+msgid "Remove"
+msgstr "Убрать"
+
+#: ../config_dialog.c:1058
+msgid "Filetypes"
+msgstr "Типы файлов"
+
+#: ../config_dialog.c:1085 ../config_dialog.c:1113 ../config_dialog.c:1146
+#: ../config_dialog.c:1204 ../config_dialog.c:1234 ../filetype_dialog.c:288
+#: ../permissions_dialog.c:287
+msgid "Add"
+msgstr "Добавить"
+
+#: ../config_dialog.c:1086 ../config_dialog.c:1115 ../config_dialog.c:1148
+#: ../config_dialog.c:1177 ../config_dialog.c:1206 ../filetype_dialog.c:289
+msgid "Edit"
+msgstr "Редактировать"
+
+#: ../config_dialog.c:1090
+msgid "User Commands"
+msgstr "Команды"
+
+#: ../config_dialog.c:1093 ../config_dialog.c:1215
+msgid "Name"
+msgstr "Имя"
+
+#: ../config_dialog.c:1121
+msgid "Toolbar Buttons"
+msgstr "Кнопки панели"
+
+#: ../config_dialog.c:1124 ../config_dialog.c:1184
+msgid "Label"
+msgstr "Метка"
+
+#: ../config_dialog.c:1125 ../config_dialog.c:1158
+msgid "Action"
+msgstr "Действие"
+
+#: ../config_dialog.c:1154
+msgid "Fn Keys"
+msgstr "Клавиши Fx"
+
+#: ../config_dialog.c:1157
+msgid "Key"
+msgstr "Клавиша"
+
+#: ../config_dialog.c:1178
+msgid "Clear"
+msgstr "Очистить"
+
+#: ../config_dialog.c:1181
+msgid "Buttons"
+msgstr "Кнопки"
+
+#: ../config_dialog.c:1212 ../menu.c:326 ../menu.c:345
+msgid "Plugins"
+msgstr "Плагины"
+
+#: ../button_dialog.c:229 ../config_dialog.c:1235
+#: ../filetype_action_dialog.c:180 ../fnkey_dialog.c:209
+#: ../toolbar_button_dialog.c:202 ../user_command_dialog.c:117
+msgid "Info"
+msgstr "Информация"
+
+#: ../config_dialog.c:1239
+msgid "Interface"
+msgstr "Интерфейс"
+
+#: ../config_dialog.c:1250
+msgid "Active List Column Button"
+msgstr "Активный список кнопки колонки"
+
+#: ../config_dialog.c:1251
+msgid "Executable"
+msgstr "Исполняемый"
+
+#: ../config_dialog.c:1252
+msgid "Symbolic Link"
+msgstr "Символическая ссылка"
+
+#: ../config_dialog.c:1253
+msgid "Special Device"
+msgstr "Специальное устройство"
+
+#: ../config_dialog.c:1254
+msgid "Socket"
+msgstr "Сокет"
+
+#: ../config_dialog.c:1255
+msgid "Directory"
+msgstr "Каталог"
+
+#: ../config_dialog.c:1256
+msgid "Tagged"
+msgstr "Отмечен"
+
+#: ../config_dialog.c:1257
+msgid "Inactive Selected"
+msgstr "Выбран неактивный"
+
+#: ../config_dialog.c:1261
+msgid "List Font"
+msgstr "Список шрифтов"
+
+#: ../config_dialog.c:1265
+msgid "Output Font"
+msgstr "Шрифт для вывода"
+
+#: ../config_dialog.c:1268
+msgid "Scrollbar Position: "
+msgstr "Позиция прокрутки: "
+
+#: ../confirm_dialog.c:73
+msgid "Yes"
+msgstr "Да"
+
+#: ../confirm_dialog.c:77
+msgid "Yes To All"
+msgstr "Да для всех"
+
+#: ../confirm_dialog.c:80
+msgid "No"
+msgstr "Нет"
+
+#: ../confirm_dialog.c:96
+#, c-format
+msgid "Are you sure you want to delete: %s"
+msgstr "Вы уверены, что хотите удалить: %s"
+
+#: ../confirm_dialog.c:106
+#, c-format
+msgid "%s already exists! Overwrite this file?"
+msgstr "%s уже существует! Переписать?"
+
+#: ../date_filter_dialog.c:49 ../date_filter_dialog.c:130
+#: ../date_filter_dialog.c:143 ../date_filter_dialog.c:166
+msgid "Accessed Since"
+msgstr "Последний доступ с"
+
+#: ../date_filter_dialog.c:54 ../date_filter_dialog.c:131
+#: ../date_filter_dialog.c:146
+msgid "Accessed Before"
+msgstr "Посл. доступ перед"
+
+#: ../date_filter_dialog.c:59 ../date_filter_dialog.c:132
+#: ../date_filter_dialog.c:151
+msgid "Modified Since"
+msgstr "Модифицирован с"
+
+#: ../date_filter_dialog.c:64 ../date_filter_dialog.c:133
+#: ../date_filter_dialog.c:154
+msgid "Modified Before"
+msgstr "Модифицирован перед"
+
+#: ../date_filter_dialog.c:69 ../date_filter_dialog.c:134
+#: ../date_filter_dialog.c:159
+msgid "Changed Since"
+msgstr "Изменен с"
+
+#: ../date_filter_dialog.c:74 ../date_filter_dialog.c:135
+#: ../date_filter_dialog.c:162
+msgid "Changed Before"
+msgstr "Изменен перед"
+
+#: ../date_filter_dialog.c:120
+msgid "Date Filter: "
+msgstr "Фильтр даты: "
+
+#: ../emelfm.c:114
+#, c-format
+msgid "%d of %d files selected"
+msgstr "%d из %d файлов выбрано"
+
+#: ../emelfm.c:134
+msgid "Filename"
+msgstr "Имя"
+
+#: ../emelfm.c:135
+msgid "Size"
+msgstr "Размер"
+
+#: ../emelfm.c:136
+msgid "Modified"
+msgstr "Модифицирован"
+
+#: ../emelfm.c:137
+msgid "Accessed"
+msgstr "Доступен"
+
+#: ../emelfm.c:138
+msgid "Changed"
+msgstr "Изменен"
+
+#: ../emelfm.c:139
+msgid "Permissions"
+msgstr "Права"
+
+#: ../emelfm.c:140
+msgid "Owner"
+msgstr "Владелец"
+
+#: ../emelfm.c:141 ../permissions_dialog.c:262
+msgid "Group"
+msgstr "Группа"
+
+#: ../emelfm.c:208 ../menu.c:266 ../menu.c:288 ../window.c:1107
+msgid "Copy"
+msgstr "Копировать"
+
+#: ../emelfm.c:209 ../menu.c:268 ../menu.c:290 ../window.c:1112
+msgid "Move"
+msgstr "Переместить"
+
+#: ../emelfm.c:210
+msgid "Rename"
+msgstr "Переименовать"
+
+#: ../emelfm.c:211 ../menu.c:270 ../menu.c:292 ../window.c:1117
+msgid "SymLink"
+msgstr "Сим. ссылка"
+
+#: ../emelfm.c:212 ../menu.c:273 ../menu.c:295
+msgid "Delete"
+msgstr "Удалить"
+
+#: ../emelfm.c:213
+msgid "MkDir"
+msgstr "Соз. каталог"
+
+#: ../emelfm.c:214
+msgid "File Info"
+msgstr "Инф. о файле"
+
+#: ../emelfm.c:215
+msgid "Refresh"
+msgstr "Обновить"
+
+#: ../emelfm.c:216
+msgid "Configure"
+msgstr "Настройка"
+
+#: ../emelfm.c:217
+msgid "Quit"
+msgstr "Выход"
+
+#: ../emelfm.c:223
+msgid "Image Files"
+msgstr "Файлы с изображениями"
+
+#: ../emelfm.c:224
+msgid "Source Code Files"
+msgstr "Файлы с исходными кодами"
+
+#: ../emelfm.c:225
+msgid "Object Files"
+msgstr "Объектные файлы"
+
+#: ../emelfm.c:226
+msgid "HTML Documents"
+msgstr "Документы HTML"
+
+#: ../emelfm.c:227
+msgid "Gzipped Tarballs"
+msgstr "Сжатые gzip'ом tar'боллы"
+
+#: ../emelfm.c:228
+msgid "RPM Packages"
+msgstr "Пакеты RPM"
+
+#: ../emelfm.c:229
+msgid "Adobe Acrobat Documents"
+msgstr "Документы Adobe Acrobat"
+
+#: ../emelfm.c:230
+msgid "PostScript Documents"
+msgstr "Документы PostScript"
+
+#: ../emelfm.c:247
+msgid "Find SUID and SGID files"
+msgstr "Найти SUID и SGID файлы"
+
+#: ../emelfm.c:248
+msgid "Find which RPM this came from"
+msgstr "Выяснить какому пакету RPM принадлежит файл"
+
+#: ../emelfm.c:249
+msgid "Make Tarball"
+msgstr "Создать tar'болл"
+
+#: ../emelfm.c:250
+msgid "Make Patch"
+msgstr "Сделать patch"
+
+#: ../emelfm.c:256
+msgid "Disk Usage of current directory"
+msgstr "Использование дискового пространства в текущем каталоге"
+
+#: ../emelfm.c:257
+msgid "Available disk space"
+msgstr "Свободное дисковое пространство"
+
+#: ../emelfm.c:258
+msgid "Memory information"
+msgstr "Информация о памяти"
+
+#: ../emelfm.c:259
+msgid "Open an Xterm"
+msgstr "Запустить Xterm"
+
+#: ../emelfm.c:261
+msgid "su %{Enter Command:}; echo \"done. Press Enter\"; read"
+msgstr "su %{Введите команду:}; echo \"Готово. Нажмите Enter\"; read"
+
+#: ../emelfm.c:262
+msgid "Execute a command as root"
+msgstr "Выполнить команду от имени root'а"
+
+#: ../emelfm.c:332
+msgid "Type 'help' to get a list of keyboard shortcuts\n"
+msgstr "Введите 'help' для вывода списка клавиатурных сокращений\n"
+
+#: ../filelist.c:93
+msgid "That directory does not exist\n"
+msgstr "Этот каталог не существует\n"
+
+#: ../filelist.c:98
+msgid "You do not have read access on that directory\n"
+msgstr "Вы не имеете прав на чтение этого каталога\n"
+
+#: ../filelist.c:601
+#, c-format
+msgid "Unable to open directory: %s\n"
+msgstr "Не могу открыть каталог: %s\n"
+
+#: ../filelist.c:651
+#, c-format
+msgid "%d bytes"
+msgstr "%d байт"
+
+#: ../filelist.c:656
+#, c-format
+msgid "%.2f Kbytes"
+msgstr "%.2f Кбайт"
+
+#: ../filelist.c:661
+#, c-format
+msgid "%.2f Mbytes"
+msgstr "%.2f Мбайт"
+
+#: ../filename_filter_dialog.c:37
+msgid "Invalid filename pattern\n"
+msgstr "Неправильный образец имени файла\n"
+
+#: ../filename_filter_dialog.c:90
+msgid "Filename Filter: "
+msgstr "Фильтр имени файла: "
+
+#: ../filename_filter_dialog.c:107
+msgid "Show files that DO NOT match the given mask"
+msgstr "Показать файлы, которые НЕ соответствуют указанной маске"
+
+#: ../fileops.c:398
+msgid "----end-of-output----\n"
+msgstr "----конец-вывода----\n"
+
+#: ../filetype_dialog.c:141
+msgid "Extensions field cannot be blank\n"
+msgstr "Поле расширения не может быть пустым\n"
+
+#: ../filetype_dialog.c:148
+msgid "At least one action is required\n"
+msgstr "Требуется как минимум одно действие\n"
+
+#: ../filetype_dialog.c:233
+msgid "Description:"
+msgstr "Описание:"
+
+#: ../filetype_dialog.c:237
+msgid "Extension(s):"
+msgstr "Расширение(я):"
+
+#: ../filetype_dialog.c:291
+msgid "Set Default"
+msgstr "По умол."
+
+#: ../filetype_dialog.c:294
+msgid "Done"
+msgstr "Готово"
+
+#: ../file_info_dialog.c:60 ../utils.c:68
+msgid "Unable to open pipe for file command\n"
+msgstr "Не могу открыть канал для команды file\n"
+
+#: ../file_info_dialog.c:92 ../ownership_dialog.c:139
+#: ../permissions_dialog.c:210
+#, c-format
+msgid "Filename: %s"
+msgstr "Имя файла: %s"
+
+#: ../file_info_dialog.c:103
+msgid "File Type: Symbolic Link"
+msgstr "Тип файла: Символьная ссылка"
+
+#: ../file_info_dialog.c:115
+#, c-format
+msgid "Link To: %s"
+msgstr "Ссылка на: %s"
+
+#: ../file_info_dialog.c:120
+msgid "Link To: Couldn't Resolve Link"
+msgstr "Ссылка на: Не могу распознать куда"
+
+#: ../file_info_dialog.c:145
+#, c-format
+msgid "File Type: %s"
+msgstr "Тип файла: %s"
+
+#: ../file_info_dialog.c:150
+msgid "File Type: Directory"
+msgstr "Тип файла: Каталог"
+
+#: ../file_info_dialog.c:155
+msgid "File Type: Character Device"
+msgstr "Тип файла: Символьное устройство"
+
+#: ../file_info_dialog.c:160
+msgid "File Type: Block Device"
+msgstr "Тип файла: Блочное устройство"
+
+#: ../file_info_dialog.c:165
+msgid "File Type: FIFO Pipe"
+msgstr "Тип файла: ФИФО канал"
+
+#: ../file_info_dialog.c:170
+msgid "File Type: Socket"
+msgstr "Тип файла: Сокет"
+
+#: ../file_info_dialog.c:175
+msgid "File Type: Unknown"
+msgstr "Тип файла: Неизвестен"
+
+#: ../file_info_dialog.c:181
+#, c-format
+msgid "Size: %d bytes"
+msgstr "Размер: %d байт"
+
+#: ../file_info_dialog.c:184
+#, c-format
+msgid "Size: %.2f Kbytes"
+msgstr "Размер: %.2f Кбайт"
+
+#: ../file_info_dialog.c:187
+#, c-format
+msgid "Size: %.2f Mbytes"
+msgstr "Размер: %.2f Мбайт"
+
+#: ../file_info_dialog.c:196 ../ownership_dialog.c:149
+msgid "User: "
+msgstr "Пользователь: "
+
+#: ../file_info_dialog.c:209 ../ownership_dialog.c:155
+msgid "Group: "
+msgstr "Группа: "
+
+#: ../file_info_dialog.c:223
+msgid "Permissions: "
+msgstr "Права: "
+
+#: ../file_info_dialog.c:233
+msgid "Accessed: "
+msgstr "Посл. доступ: "
+
+#: ../file_info_dialog.c:238
+msgid "Modified: "
+msgstr "Модифицирован: "
+
+#: ../file_info_dialog.c:243
+msgid "Changed: "
+msgstr "Изменен: "
+
+#: ../file_info_dialog.c:246 ../view_dialog.c:88
+msgid "Close"
+msgstr "Закрыть"
+
+#: ../init_filetype_dialog.c:122
+msgid ""
+"What would you like to do with this file?\n"
+"\n"
+msgstr ""
+"Что вы хотите сделать с этим файлом?\n"
+"\n"
+""
+
+#: ../init_filetype_dialog.c:123
+#, c-format
+msgid ""
+"Filename:  %s\n"
+"Extension: %s"
+msgstr ""
+"Имя файла:  %s\n"
+"Расширение: %s"
+
+#: ../init_filetype_dialog.c:133
+msgid "Create a new filetype for this extension"
+msgstr "Создать новый тип файла для этого расширения"
+
+#: ../init_filetype_dialog.c:135
+msgid "Add this extension to an existing filetype"
+msgstr "Добавить это расширение к существующему типу"
+
+#: ../init_filetype_dialog.c:137 ../open_query_dialog.c:87
+msgid "Enter a command to Open with"
+msgstr "Введите команду для Открытия С"
+
+#: ../init_filetype_dialog.c:139 ../open_query_dialog.c:89
+msgid "View File"
+msgstr "Просмотреть файл"
+
+#: ../menu.c:90
+msgid "File does not have an extension\n"
+msgstr "Файл не имеет расширения\n"
+
+#: ../menu.c:107
+msgid "Filetype not found.\n"
+msgstr "Тип файла не найден.\n"
+
+#: ../menu.c:185
+msgid "Add Bookmark"
+msgstr "Добавить закладку"
+
+#: ../menu.c:186
+msgid "Edit Bookmarks"
+msgstr "Редактировать закладки"
+
+#: ../menu.c:188
+msgid "_Bookmarks"
+msgstr "_Закладки"
+
+#: ../menu.c:192
+msgid "Filename Filter"
+msgstr "Фильтр по имени"
+
+#: ../menu.c:193
+msgid "Size Filter"
+msgstr "Фильтр по размеру"
+
+#: ../menu.c:194
+msgid "Date Filter"
+msgstr "Фильтр по дате"
+
+#: ../menu.c:196
+msgid "Filter Directories"
+msgstr "Фильтровать каталоги"
+
+#: ../menu.c:199
+msgid "Remove All Filters"
+msgstr "Убрать все фильтры"
+
+#: ../menu.c:200
+msgid "_Filters"
+msgstr "_Фильтры"
+
+#: ../menu.c:218
+msgid "Edit Plugins..."
+msgstr "Редактировать плагины..."
+
+#: ../menu.c:238
+msgid "Edit User Commands..."
+msgstr "Редактировать команды..."
+
+#: ../menu.c:261 ../menu.c:280
+msgid "File Info..."
+msgstr "Информация о файле..."
+
+#: ../menu.c:262 ../menu.c:281
+msgid "Permissions..."
+msgstr "Права..."
+
+#: ../menu.c:263 ../menu.c:282
+msgid "User/Group..."
+msgstr "Пользователь/Группа..."
+
+#: ../menu.c:265 ../menu.c:287
+msgid "Rename..."
+msgstr "Переименовать..."
+
+#: ../menu.c:267 ../menu.c:289
+msgid "Copy As..."
+msgstr "Копировать как..."
+
+#: ../menu.c:269 ../menu.c:291
+msgid "Move As..."
+msgstr "Переместить как..."
+
+#: ../menu.c:271 ../menu.c:293
+msgid "SymLink As..."
+msgstr "Сим. ссылка как..."
+
+#: ../menu.c:272 ../menu.c:294
+msgid "MkDir..."
+msgstr "Создать каталог..."
+
+#: ../menu.c:283
+msgid "Properties"
+msgstr "Свойства"
+
+#: ../menu.c:296
+msgid "Operations"
+msgstr "Операции"
+
+#: ../menu.c:314 ../menu.c:332
+msgid "Open"
+msgstr "Открыть"
+
+#: ../menu.c:315
+msgid "Open with..."
+msgstr "Открыть с..."
+
+#: ../menu.c:316
+msgid "View"
+msgstr "Посмотреть"
+
+#: ../menu.c:317
+msgid "Choose action"
+msgstr "Выбрать действие"
+
+#: ../menu.c:318
+msgid "Edit filetype..."
+msgstr "Редактировать тип..."
+
+#: ../menu.c:324 ../menu.c:342 ../permissions_dialog.c:255
+msgid "User"
+msgstr "Пользователь"
+
+#: ../menu.c:329 ../menu.c:349
+msgid "Configure..."
+msgstr "Настроить..."
+
+#: ../menu.c:333
+msgid "Open in Other Panel"
+msgstr "Открыть на другой панели"
+
+#: ../menu.c:335
+msgid "Mount"
+msgstr "Монтировать"
+
+#: ../menu.c:336
+msgid "UnMount"
+msgstr "Размонтировать"
+
+#: ../ownership_dialog.c:143
+#, c-format
+msgid "Permissions: %s"
+msgstr "Права: %s"
+
+#: ../ownership_dialog.c:227 ../permissions_dialog.c:294
+msgid "Recurse Directories"
+msgstr "Рекурсивно в каталоги"
+
+#: ../ownership_dialog.c:231 ../permissions_dialog.c:298
+msgid "Apply To All"
+msgstr "Применить ко всем"
+
+#: ../permissions_dialog.c:97
+msgid "Something fucked up. Exit quickly.\n"
+msgstr "Что-то на%:нулось. Срочно падаю :-).\n"
+
+#: ../permissions_dialog.c:218
+#, c-format
+msgid "User: %s"
+msgstr "Пользователь: %s"
+
+#: ../permissions_dialog.c:223
+#, c-format
+msgid "User: %d"
+msgstr "Пользователь: %d"
+
+#: ../permissions_dialog.c:230
+#, c-format
+msgid "Group: %s"
+msgstr "Группа: %s"
+
+#: ../permissions_dialog.c:235
+#, c-format
+msgid "Group: %d"
+msgstr "Группа: %d"
+
+#: ../permissions_dialog.c:239
+msgid "File Permissions"
+msgstr "Права файла"
+
+#: ../permissions_dialog.c:249
+msgid "Read"
+msgstr "Чтение"
+
+#: ../permissions_dialog.c:250
+msgid "Write"
+msgstr "Запись"
+
+#: ../permissions_dialog.c:251
+msgid "Exec"
+msgstr "Запуск"
+
+#: ../permissions_dialog.c:252
+msgid "Special"
+msgstr "Специальное"
+
+#: ../permissions_dialog.c:259
+msgid "Set UID"
+msgstr "Установить UID"
+
+#: ../permissions_dialog.c:266
+msgid "Set GID"
+msgstr "Установить GID"
+
+#: ../permissions_dialog.c:269
+msgid "Other"
+msgstr "Другое"
+
+#: ../permissions_dialog.c:273
+msgid "Sticky"
+msgstr "Липкий"
+
+#: ../permissions_dialog.c:275
+msgid "Action:"
+msgstr "Действие:"
+
+#: ../permissions_dialog.c:284
+msgid "Set"
+msgstr "Установить"
+
+#: ../size_filter_dialog.c:42 ../size_filter_dialog.c:107
+#: ../size_filter_dialog.c:117 ../size_filter_dialog.c:125
+msgid "Bigger Than"
+msgstr "Больше чем"
+
+#: ../size_filter_dialog.c:51 ../size_filter_dialog.c:138
+#: ../size_filter_dialog.c:149
+msgid "Bytes"
+msgstr "Байт"
+
+#: ../size_filter_dialog.c:53 ../size_filter_dialog.c:139
+#: ../size_filter_dialog.c:155
+msgid "KBytes"
+msgstr "КБайт"
+
+#: ../size_filter_dialog.c:97
+msgid "Size Filter: "
+msgstr "Фильтр по размеру: "
+
+#: ../size_filter_dialog.c:108 ../size_filter_dialog.c:121
+msgid "Smaller Than"
+msgstr "Меньше чем"
+
+#: ../size_filter_dialog.c:140 ../size_filter_dialog.c:161
+msgid "MBytes"
+msgstr "МБайт"
+
+#: ../button_dialog.c:142 ../toolbar_button_dialog.c:132
+msgid "Label: "
+msgstr "Метка: "
+
+#: ../toolbar_button_dialog.c:133
+msgid "Tooltip: "
+msgstr "Подсказка: "
+
+#: ../button_dialog.c:144 ../filetype_action_dialog.c:121
+#: ../toolbar_button_dialog.c:137
+msgid "Action: "
+msgstr "Действие: "
+
+#: ../button_dialog.c:146 ../filetype_action_dialog.c:122
+#: ../fnkey_dialog.c:129 ../toolbar_button_dialog.c:139
+#: ../user_command_dialog.c:96 ../window.c:1574
+msgid "Command: "
+msgstr "Команда: "
+
+#: ../toolbar_button_dialog.c:142
+msgid "Capture Output"
+msgstr "Вывод захваченного"
+
+#: ../button_dialog.c:151 ../filetype_action_dialog.c:125
+#: ../fnkey_dialog.c:135 ../toolbar_button_dialog.c:144
+msgid "Plugin: "
+msgstr "Плагин: "
+
+#: ../plugin_info_dialog.c:78 ../user_command_dialog.c:95
+msgid "Name: "
+msgstr "Имя: "
+
+#: ../button_dialog.c:148 ../fnkey_dialog.c:132
+msgid "System: "
+msgstr "Система: "
+
+#: ../user_prompt.c:34
+msgid "Invalid input\n"
+msgstr "Некорректный ввод\n"
+
+#: ../utils.c:176
+msgid "Trouble in untag_all()\n"
+msgstr "Ошибка при untag_all()\n"
+
+#: ../utils.c:336
+msgid "No files selected\n"
+msgstr "Файлы не выбраны\n"
+
+#: ../utils.c:363
+msgid "No files selected in other pane\n"
+msgstr "Файлы не выбраны на другой панели\n"
+
+#: ../utils.c:391
+msgid "No matching '}' found in action text.\n"
+msgstr "Не найдено символа '}' в указанном тексте.\n"
+
+#: ../utils.c:453
+msgid "Something went wrong in op_with_ow_check\n"
+msgstr "Что-то пошло криво в op_with_ow_check\n"
+
+#: ../utils.c:495
+msgid "Something is going wrong with the auto-refresh. Exit quickly\n"
+msgstr "Что-то не так в auto-refresh. Срочно падаю :-)\n"
+
+#: ../utils.c:498
+msgid ""
+"Something is going wrong with the auto-refresh.\n"
+"Please send a bug report to author\n"
+msgstr ""
+"Что-то пошло не так с auto-refresh.\n"
+"Пожалуйста пошлите баг-репорт автору\n"
+""
+
+#: ../view_dialog.c:53
+msgid "Unable to open file for reading: "
+msgstr "Не могу открыть файл для чтения: "
+
+#: ../window.c:511
+msgid "Environment variable 'HOME' not set."
+msgstr "Переменная окружения 'HOME' не установлена."
+
+#: ../window.c:1179
+#, c-format
+msgid "file:%s/%s\r\n"
+msgstr "file:%s/%s\r\n"
+
+#: ../window.c:1285
+msgid ""
+"Left Click: Maximize/Minimize File View\n"
+"Right Click: Sync Dirs"
+msgstr ""
+"Левый щелчок: Максимизировать/Минимизировать вид файла\n"
+"Правый щелчок: Синхронизировать каталоги"
+
+#: ../window.c:1318
+msgid "Left Click: Up Dir   Right Click: Home"
+msgstr "Левый щелчок: Вверх на каталог   Правый щелчок: Домой"
+
+#: ../window.c:1505
+#, c-format
+msgid "Welcome to emelFM - Version %s"
+msgstr "Добро пожаловать в emelFM - Версия %s"
+
+#: ../window.c:1560
+msgid "Show/Hide output area"
+msgstr "Показать/Спрятать область вывода"
+
+#: ../window.c:1603
+msgid "Ready"
+msgstr "Готово"
+
+#: ../fnkey_dialog.c:124
+msgid "Choose an operation: "
+msgstr "Выберите операцию: "
+
+#: ../filetype_action_dialog.c:118
+msgid "Name (optional): "
+msgstr "Имя (опционально): "
+
+#: ../plugin_info_dialog.c:79
+msgid "Description: "
+msgstr "Описание: "
+
+#: ../plugin_info_dialog.c:85
+msgid "Show in popup menu?"
+msgstr "Показать в всплывающем меню?"
+
+#: ../open_query_dialog.c:77
+msgid "What would you like to do with this file?\n"
+msgstr "Что бы вы хотели сделать с этим файлом?\n"
+
+#: ../open_query_dialog.c:78
+#, c-format
+msgid "Filename:  %s"
+msgstr "Имя файла:  %s"
+
+#: window.c:155
+msgid ""
+"\n"
+"Vi Keys\n"
+"~~~~~~~\n"
+"Updir      h        Find       /\n"
+"Open       l        Tag        t\n"
+"Up         k        Top        g\n"
+"Down       j        Bottom     G\n"
+msgstr ""
+"\n"
+"Клавиши Vi\n"
+"~~~~~~~\n"
+"Вверх кат. h        Найти      /\n"
+"Открыть    l        Отметить   t\n"
+"Вверх      k        Наверх     g\n"
+"Вниз       j        Совс.вниз  G\n"
+
+#: ../window.c:1297
+msgid "Show/Hide hidden files"
+msgstr "Показать/Убрать спрятанные файлы"
+

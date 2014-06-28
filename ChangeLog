@@ -1,0 +1,202 @@
+0.9.2
+  * Fixed more key binding issues (hopefully everything is fixed now)
+  * French language translation added (Thanks to Aurelien Gateau)
+  * Czech language translation added (Thanks to Vaclav Dvorak)
+  * Added update detection functionality to alert the user to changes when they
+    first run a new version of emelFM.
+  * Added the Drag highlight color to the config dialog
+  * Fixed bug causing emelFM to always open the output window on startup
+  * The Unpack plugin now changes back to the directory the package is in when
+    you leave the .emelfm-unpack directory.
+  * Fixed bug causing emelFM to hang when you use the window manager to close
+    the config dialog
+  * Added Up/Down icons to config pages
+
+0.9.1
+  * Fixed Key binding functionality with Num Lock turned on
+  * Added "Unpack" Plugin that unpacks an archive into a temp directory. Once
+    you leave that directory, the plugin asks if you want to rebuild the
+    package. This approximates the "archives as directories" feature that many
+    people have asked for.
+  * Added a special menu for executable files with options:  "Execute",
+    "Execute with args", "Execute in xterm" and "Execute in xterm with args".
+  * Added a few default filetypes for archives to use the new Unpack Plugin
+  * Cursor now changes into a watch during operations
+  * Fixed zip functionality in "Pack" Plugin
+  * Added "Go Home" Interface callback for key bindings
+
+0.9.0
+  * Key Bindings are fully configurable (Oh Happy Day!!!)
+  * Appending an '&' to actions will cause emelFM to discard the output now
+  * Got rid of the "Capture Output" option for toolbars (since i made the above
+    change)
+  * Fixed a bug when renaming multiple files
+  * Fixed (hopefully) problems with config file conflicts when running more 
+    than one instance of emelFM
+  * Added View Plugin that calls the emelFM View function, this is useful for
+    associating with a filetype for text files.
+
+0.8.2
+  * Fixed a crash when creating new file types.
+  * Fixed bug in removing bookmarks
+  * Fixed bug that caused plugins to sometimes disable auto-refresh
+  * Added up/down buttons to pages in the config dialogs (you can still drag &
+    drop, but buttons are more obvious)
+  * Now captures the output when you double click executables and on filetype
+    actions. This leads to lots of extra "end-of-output" messages in the output
+    window.
+  * Now selects the new directory after a MkDir and Rename
+
+0.8.1
+  * Fixed problem with cancel'ing out of the config dialog causing emelFM to
+    hang
+  * Added "Disk Usage" plugin
+  * Right clicking the output window will close it.
+  * Fixed the view dialog for when an output font isn't selected
+
+0.8.0
+  * Added a Plugin system.
+  * Added Show/Hide hidden files toggle button (by Aurelien Gateau)
+  * Filetype Actions are now Name'able (by Aurelien Gateau)
+  * Added option for "Windows Right Click Behavior". This just selects a file
+    when you right click on it. (by Aurelien Gateau)
+  * Internationalization added (Thanks to Konstantin Volckov)
+  * Russian localization added (Thanks to Konstantin Volckov)
+  * emelFM now remembers what was selected in the other pane when you switch
+    (added the %F macro which takes advantage of this)
+  * Fixed problems with emelFM getting hung when you run commands from the
+    command line and they try to read from stdin (this was embarassingly easy to
+    fix)
+  * Added Scrollbar position configuration (Under Interface tab in config)
+  * Enabled configuration of startup directory for left and right panes
+    individually
+  * Fixed "Copy to Clipboard" Crash
+  * Fixed config dialog crash
+  * Replaced calls to gtk_grab_add/remove with set_sensitive calls
+  * Interface tweaks
+
+0.7.2
+  * Fixed SERIOUS bug with auto_refresh handling and Config File reloading.
+    Thanks to Paul Evans (again :) for submitting the bug report.
+  * Added mount/unmount operations to the directory popup menu
+  * While at the command line, PageUp/PageDown will scroll the output window
+  * Replaced all strdup/free calls with g_strdup/g_free
+
+0.7.1
+  * Main Window buttons are now configurable
+  * Prefixing an action with an 'su' will open an xterm and su to root to
+    execute that action.
+  * File List and Output Text Fonts are now configurable
+  * Changed the behaviour for unknown extensions. Now you are prompted with
+    a number of options to choose from.
+  * Right clicking the '<','>' buttons will change the inactive directories
+  * Added a "Open in Other Pane" option to the Right Click menu for directories
+  * Fixed Drag & Drop.. Now it *really* works with other apps
+  * Now the tag shortcut will tag all selected files.
+  * Added shortcuts Ctrl-, and Ctrl-. to maximize/minimize the left and right
+    file views respectively
+  * Now the status bar is updated by a timeout function.
+  * Added "Copy to clipboard" function to the "Special" menu.
+  * Added "Invert" option to Glob Select dialog
+  * Fixed a problem with Copy hanging due to 'cp' prompting for input. Thanks
+    to Paul Evans for submitting the bug report.
+  * Changed "Copy Here" function to "Clone". This just sounds much better.
+  * Fixed lots of focus issues that were starting to annoy me
+
+0.7.0
+  * Added Fn Key configurability, You can configure them to perform system
+    operations, or custom commands similair to "User Commands"
+  * Added "Find" Shortcut Ctrl+F (or '/' if Vi Keys is on).
+  * Added "Maximize/Minimize File View" Button.. the '>' button next to the
+    directory field
+  * Added "Auto Refresh" capability.. you can disable it if you want
+  * Added "Sort By Ext." function to the special function menu
+  * Now you can drag and drop between different instances of emelFM and some
+    other Gtk+ Filemanagers like gmc.
+  * Right Clicking the "Up Dir" button will now change to the Home directory
+  * Modified the Right-click menu to include the "User" and "Special" submenus.
+    "Properties" and "Operations" are also submenus by default now.. to have
+    them expanded check "Expanded Right-Click menu" from General - Page 2 of
+    the config dialog.
+  * Now you can navigate the filelist using Vi style keys (hjkl). Select "Use
+    Vi Keys" from General - Page 2 of the config dialog.
+  * Now emelFM remembers the width of the columns in the File List
+  * Typing 'clear' at the command line will clear the output text area
+  * Added an "Apply to all files" option to the "Rename substring" function
+  * You can now use the % macros with the "Open With.." Dialog
+  * Changed a lot of things internally.. let me know if something doesn't work
+
+0.6.4
+  * Toolbar buttons are now configurable.
+  * You can now reorder User Commands, Filetypes, and Toolbar buttons from the
+    config dialog via drag and drop
+  * Added "For Each" function to the special menu (Shift+Right Click), to
+    execute a command on each selected file instead of passing all of the
+    selected filename's to one command
+  * Removed the "Glob Copy" and "Glob Move" functions. They only saved one
+    click.
+  * Escape will now cancel dialogs
+  * Typing 'help' at the command line will now give a list of the keyboard
+    shortcuts
+  * Fixed some overwrite confirmation issues.
+  * Added Ctrl+T shortcut to tag files. Right now there is no way to tag files
+    with the mouse, but multiple selection is possible with Ctrl+Left Click
+  * Patch submitted by Francois Petitjean fixed some compile time warnings on
+    Solaris 2.5. Thanks!
+  * Added sort arrows to the column buttons
+  * Prefixing an action for a filetype with an 'x' will open an xterm to execute
+    that action just as it does for the command line. This just saves you from
+    typing 'xterm -e sh -c "action"'. This also works for user commands,
+    toolbar buttons, and just about anywhere else you can type a command.
+  * Added Ctrl+W shortcut to open and close the output window
+
+0.6.3
+  * Added a user-defined commands menu which is activated with Ctrl+Right Click.
+    I feel this is a better option than user-defined buttons (esp. since it
+    means i don't have to go muck around with the button code :)
+  * Now the macros for Filetype actions are the same as those for user commands.
+    eg. %D = the inactive directory etc.. This allows you to add an action to
+    untar a tarball into the inactive directory (let me know if you have any
+    other uses for this).
+  * Changed the way the confirmation dialogs work internally so that they now
+    work with drag and drop also.
+  * Removed the "Browse" menu option. I couldn't think of anything that would
+    make it useful and I eventually forgot that it was even there so..
+  * Fixed problem that was causing a compile-time error on Solaris 2.6.
+    Thanks Maksim.
+  * Drag and Drop is now aided by highlighting the active row. Also fixed a
+    problem that wouldn't let you copy to a dir if it was the last entry in
+    the list
+
+0.6.2
+  * Fixed lots of crashes
+  * Added Drag and Drop capabilities. Drag and Drop is initiated with the 
+    middle mouse button. When you release the button, a menu will popup asking
+    what operation (copy/move/symlink) you want to perform.
+  * Added a special function menu which is activated with Shift+Right Click.
+    The menu includes Glob operations and some other convenience functions.
+  * Prefixing an 'x' to a command on the command line will open an xterm to
+    execute the rest of the command. For example 'x man fopen' will open an
+    xterm with the manpage for fopen.
+  * Typing a 'cd' command now changes the current directory
+  * Status bar now shows number of files selected/total files
+  * Added 'X' toolbar button to open an xterm
+  * Added FULL tab completion support for command line
+
+0.6.1
+  * You can now invoke emelFM with 'emelfm <left-dir> <right-dir>'
+    to start with specific directories
+  * Added Timeout function to poll the config files.. now its safe to run
+    multiple emelFM's at the same time and the config files will stay in sync
+  * Added shortcuts to the filelist menus
+  * Added Ctrl+Z shortcut to switch focus between filelist and command line
+  * Added Ctrl+H shortcut to switch focus to the directory entry
+  * Added "Invert" option to the filename filter dialog
+  * Added "Edit Bookmarks" option to bookmarks menu
+  * Added du,df, and free buttons
+  * Moved "Filter Directories" option to the "Filter" menu
+  * Tab completion for the command line (for current directory only)
+  * Filter menu now turns red when active
+
+0.6.0
+  * Initial Release

@@ -1,0 +1,1266 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2000-12-01 23:11-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: ../add_ext_dialog.c:39
+msgid "Please select a filetype first\n"
+msgstr ""
+
+#: ../add_ext_dialog.c:86 ../config_dialog.c:923
+msgid "Extensions"
+msgstr ""
+
+#: ../add_ext_dialog.c:87 ../config_dialog.c:924
+msgid "Description"
+msgstr ""
+
+#: ../add_ext_dialog.c:91
+msgid "No Filetypes exist\n"
+msgstr ""
+
+#: ../add_ext_dialog.c:107
+#, c-format
+msgid "Choose filetype for extension: %s"
+msgstr ""
+
+#: ../add_ext_dialog.c:130 ../button_dialog.c:225 ../date_filter_dialog.c:175
+#: ../filename_filter_dialog.c:109 ../filetype_action_dialog.c:179
+#: ../key_binding_dialog.c:324 ../ownership_dialog.c:230
+#: ../permissions_dialog.c:297 ../plugin_info_dialog.c:89
+#: ../plugins/glob.c:163 ../plugins/rename_ext.c:136
+#: ../size_filter_dialog.c:164 ../toolbar_button_dialog.c:186
+#: ../user_command_dialog.c:113 ../user_prompt.c:98
+msgid "Ok"
+msgstr ""
+
+#: ../add_ext_dialog.c:131 ../button_dialog.c:227 ../config_dialog.c:792
+#: ../confirm_dialog.c:83 ../date_filter_dialog.c:176
+#: ../filename_filter_dialog.c:110 ../filetype_action_dialog.c:181
+#: ../filetype_dialog.c:312 ../init_filetype_dialog.c:132
+#: ../key_binding_dialog.c:326 ../open_query_dialog.c:90
+#: ../ownership_dialog.c:232 ../permissions_dialog.c:299
+#: ../plugin_info_dialog.c:90 ../plugins/glob.c:164 ../plugins/pack.c:131
+#: ../plugins/rename_ext.c:137 ../size_filter_dialog.c:165
+#: ../toolbar_button_dialog.c:188 ../user_command_dialog.c:115
+#: ../user_prompt.c:99
+msgid "Cancel"
+msgstr ""
+
+#: ../button_dialog.c:139 ../toolbar_button_dialog.c:123
+msgid "Label: "
+msgstr ""
+
+#: ../button_dialog.c:141 ../filetype_action_dialog.c:121
+#: ../key_binding_dialog.c:198 ../toolbar_button_dialog.c:128
+msgid "Action: "
+msgstr ""
+
+#: ../button_dialog.c:143 ../command_panel.c:436
+#: ../filetype_action_dialog.c:122 ../key_binding_dialog.c:200
+#: ../toolbar_button_dialog.c:130 ../user_command_dialog.c:93
+msgid "Command: "
+msgstr ""
+
+#: ../button_dialog.c:145 ../key_binding_dialog.c:203
+msgid "System: "
+msgstr ""
+
+#: ../button_dialog.c:148 ../filetype_action_dialog.c:125
+#: ../key_binding_dialog.c:209 ../toolbar_button_dialog.c:133
+msgid "Plugin: "
+msgstr ""
+
+#: ../button_dialog.c:226 ../config_dialog.c:1074
+#: ../filetype_action_dialog.c:180 ../key_binding_dialog.c:325
+#: ../toolbar_button_dialog.c:187 ../user_command_dialog.c:114
+msgid "Info"
+msgstr ""
+
+#: ../callbacks.c:88 ../callbacks.c:182 ../callbacks.c:480
+#, c-format
+msgid "Enter new filename for: %s"
+msgstr ""
+
+#: ../callbacks.c:312
+#, c-format
+msgid "Enter name for symlink to: %s"
+msgstr ""
+
+#: ../callbacks.c:534
+msgid "Enter name for new directory:"
+msgstr ""
+
+#: ../callbacks.c:658
+msgid "Enter a filename or partial filename to find:"
+msgstr ""
+
+#: ../callbacks.c:806
+msgid "Enter command:"
+msgstr ""
+
+#: ../command_panel.c:112
+msgid "Ctrl+"
+msgstr ""
+
+#: ../command_panel.c:114
+msgid "Alt+"
+msgstr ""
+
+#: ../command_panel.c:116
+msgid "Shift+"
+msgstr ""
+
+#: ../command_panel.c:125
+msgid ""
+"\n"
+"Vi Keys\n"
+"~~~~~~~\n"
+"Updir      h        Find       /\n"
+"Open       l        Tag        t\n"
+"Up         k        Top        g\n"
+"Down       j        Bottom     G\n"
+"\n"
+msgstr ""
+
+#: ../command_panel.c:422
+msgid "Show/Hide output area"
+msgstr ""
+
+#: ../config_dialog.c:465 ../config_dialog.c:1064
+msgid "YES"
+msgstr ""
+
+#: ../config_dialog.c:487
+msgid "Please select the module you want to add."
+msgstr ""
+
+#: ../config_dialog.c:576
+msgid "Choose Color"
+msgstr ""
+
+#: ../config_dialog.c:634
+msgid "Choose Font"
+msgstr ""
+
+#: ../config_dialog.c:791
+msgid "OK"
+msgstr ""
+
+#: ../config_dialog.c:800
+msgid "Configuration"
+msgstr ""
+
+#: ../config_dialog.c:825
+msgid "General - Page 1"
+msgstr ""
+
+#: ../config_dialog.c:826
+msgid "Options: "
+msgstr ""
+
+#: ../config_dialog.c:828
+msgid "Confirm Delete"
+msgstr ""
+
+#: ../config_dialog.c:832
+msgid "Confirm Overwrite"
+msgstr ""
+
+#: ../config_dialog.c:836
+msgid "Auto refresh"
+msgstr ""
+
+#: ../config_dialog.c:840
+msgid "Directories: "
+msgstr ""
+
+#: ../config_dialog.c:842
+msgid "Left Startup Dir: "
+msgstr ""
+
+#: ../config_dialog.c:847 ../config_dialog.c:855
+msgid "Last Active Directory"
+msgstr ""
+
+#: ../config_dialog.c:850
+msgid "Right Startup Dir: "
+msgstr ""
+
+#: ../config_dialog.c:864
+msgid "General - Page 2"
+msgstr ""
+
+#: ../config_dialog.c:865
+msgid "Commands: "
+msgstr ""
+
+#: ../config_dialog.c:866
+msgid "Viewer Command: "
+msgstr ""
+
+#: ../config_dialog.c:870
+msgid "Use internal viewer"
+msgstr ""
+
+#: ../config_dialog.c:875
+msgid "Xterm Command: "
+msgstr ""
+
+#: ../config_dialog.c:879
+msgid "Histories: "
+msgstr ""
+
+#: ../config_dialog.c:880
+msgid "Directory History Size: "
+msgstr ""
+
+#: ../config_dialog.c:884
+msgid "Command History Size: "
+msgstr ""
+
+#: ../config_dialog.c:890
+msgid "Columns"
+msgstr ""
+
+#: ../config_dialog.c:902 ../config_dialog.c:904
+msgid "Bookmarks"
+msgstr ""
+
+#: ../config_dialog.c:916 ../config_dialog.c:940 ../config_dialog.c:964
+#: ../config_dialog.c:990 ../config_dialog.c:1022 ../config_dialog.c:1045
+#: ../config_dialog.c:1071
+msgid "Up"
+msgstr ""
+
+#: ../config_dialog.c:917 ../config_dialog.c:941 ../config_dialog.c:965
+#: ../config_dialog.c:991 ../config_dialog.c:1023 ../config_dialog.c:1046
+#: ../config_dialog.c:1072
+msgid "Down"
+msgstr ""
+
+#: ../config_dialog.c:918 ../config_dialog.c:944 ../config_dialog.c:968
+#: ../config_dialog.c:994 ../config_dialog.c:1026 ../config_dialog.c:1049
+#: ../config_dialog.c:1075 ../filetype_dialog.c:306
+#: ../permissions_dialog.c:290
+msgid "Remove"
+msgstr ""
+
+#: ../config_dialog.c:921
+msgid "Filetypes"
+msgstr ""
+
+#: ../config_dialog.c:942 ../config_dialog.c:966 ../config_dialog.c:992
+#: ../config_dialog.c:1024 ../config_dialog.c:1047 ../config_dialog.c:1073
+#: ../filetype_dialog.c:304 ../permissions_dialog.c:287
+msgid "Add"
+msgstr ""
+
+#: ../config_dialog.c:943 ../config_dialog.c:967 ../config_dialog.c:993
+#: ../config_dialog.c:1025 ../config_dialog.c:1048 ../filetype_dialog.c:305
+msgid "Edit"
+msgstr ""
+
+#: ../config_dialog.c:947
+msgid "User Commands"
+msgstr ""
+
+#: ../config_dialog.c:949 ../config_dialog.c:1054
+msgid "Name"
+msgstr ""
+
+#: ../config_dialog.c:971
+msgid "Toolbar Buttons"
+msgstr ""
+
+#: ../config_dialog.c:973 ../config_dialog.c:1031
+msgid "Label"
+msgstr ""
+
+#: ../config_dialog.c:974 ../config_dialog.c:1001
+msgid "Action"
+msgstr ""
+
+#: ../config_dialog.c:997
+msgid "Key Bindings"
+msgstr ""
+
+#: ../config_dialog.c:999
+msgid "Mod"
+msgstr ""
+
+#: ../config_dialog.c:1000
+msgid "Key"
+msgstr ""
+
+#: ../config_dialog.c:1029
+msgid "Buttons"
+msgstr ""
+
+#: ../config_dialog.c:1052 ../menu.c:325 ../menu.c:346 ../menu.c:372
+msgid "Plugins"
+msgstr ""
+
+#: ../config_dialog.c:1055
+msgid "Show in Menu"
+msgstr ""
+
+#: ../config_dialog.c:1064
+msgid "NO"
+msgstr ""
+
+#: ../config_dialog.c:1078
+msgid "Interface - Colors"
+msgstr ""
+
+#: ../config_dialog.c:1082
+msgid "Active List Column Button"
+msgstr ""
+
+#: ../config_dialog.c:1083
+msgid "Executable"
+msgstr ""
+
+#: ../config_dialog.c:1084
+msgid "Symbolic Link"
+msgstr ""
+
+#: ../config_dialog.c:1085
+msgid "Special Device"
+msgstr ""
+
+#: ../config_dialog.c:1086
+msgid "Socket"
+msgstr ""
+
+#: ../config_dialog.c:1087
+msgid "Directory"
+msgstr ""
+
+#: ../config_dialog.c:1088
+msgid "Tagged"
+msgstr ""
+
+#: ../config_dialog.c:1089
+msgid "Inactive Selected"
+msgstr ""
+
+#: ../config_dialog.c:1090
+msgid "Drag Highlight"
+msgstr ""
+
+#: ../config_dialog.c:1093
+msgid "Interface - Misc."
+msgstr ""
+
+#: ../config_dialog.c:1097
+msgid "List Font"
+msgstr ""
+
+#: ../config_dialog.c:1100
+msgid "Output Font"
+msgstr ""
+
+#: ../config_dialog.c:1103
+msgid "Scrollbar Position: "
+msgstr ""
+
+#: ../config_dialog.c:1119
+msgid "Windows Right Click Behavior"
+msgstr ""
+
+#: ../config_dialog.c:1121
+msgid "Expanded Right Click Menu"
+msgstr ""
+
+#: ../config_dialog.c:1123
+msgid "Use Vi keys"
+msgstr ""
+
+#: ../confirm_dialog.c:73 ../plugins/unpack.c:97
+msgid "Yes"
+msgstr ""
+
+#: ../confirm_dialog.c:77
+msgid "Yes To All"
+msgstr ""
+
+#: ../confirm_dialog.c:80 ../plugins/unpack.c:98
+msgid "No"
+msgstr ""
+
+#: ../confirm_dialog.c:96
+#, c-format
+msgid "Are you sure you want to delete: %s"
+msgstr ""
+
+#: ../confirm_dialog.c:106
+#, c-format
+msgid "%s already exists! Overwrite this file?"
+msgstr ""
+
+#: ../date_filter_dialog.c:49 ../date_filter_dialog.c:130
+#: ../date_filter_dialog.c:143 ../date_filter_dialog.c:166
+msgid "Accessed Since"
+msgstr ""
+
+#: ../date_filter_dialog.c:54 ../date_filter_dialog.c:131
+#: ../date_filter_dialog.c:146
+msgid "Accessed Before"
+msgstr ""
+
+#: ../date_filter_dialog.c:59 ../date_filter_dialog.c:132
+#: ../date_filter_dialog.c:151
+msgid "Modified Since"
+msgstr ""
+
+#: ../date_filter_dialog.c:64 ../date_filter_dialog.c:133
+#: ../date_filter_dialog.c:154
+msgid "Modified Before"
+msgstr ""
+
+#: ../date_filter_dialog.c:69 ../date_filter_dialog.c:134
+#: ../date_filter_dialog.c:159
+msgid "Changed Since"
+msgstr ""
+
+#: ../date_filter_dialog.c:74 ../date_filter_dialog.c:135
+#: ../date_filter_dialog.c:162
+msgid "Changed Before"
+msgstr ""
+
+#: ../date_filter_dialog.c:120
+msgid "Date Filter: "
+msgstr ""
+
+#: ../emelfm.c:124
+#, c-format
+msgid "%d of %d files selected"
+msgstr ""
+
+#: ../emelfm.c:200
+msgid "Filename"
+msgstr ""
+
+#: ../emelfm.c:201
+msgid "Size"
+msgstr ""
+
+#: ../emelfm.c:202
+msgid "Modified"
+msgstr ""
+
+#: ../emelfm.c:203
+msgid "Accessed"
+msgstr ""
+
+#: ../emelfm.c:204
+msgid "Changed"
+msgstr ""
+
+#: ../emelfm.c:205
+msgid "Permissions"
+msgstr ""
+
+#: ../emelfm.c:206
+msgid "Owner"
+msgstr ""
+
+#: ../emelfm.c:207 ../permissions_dialog.c:262
+msgid "Group"
+msgstr ""
+
+#: ../emelfm.c:267 ../fileview.c:466 ../menu.c:265 ../menu.c:287
+msgid "Copy"
+msgstr ""
+
+#: ../emelfm.c:268 ../fileview.c:471 ../menu.c:267 ../menu.c:289
+msgid "Move"
+msgstr ""
+
+#: ../emelfm.c:269
+msgid "Rename"
+msgstr ""
+
+#: ../emelfm.c:270 ../fileview.c:476 ../menu.c:269 ../menu.c:291
+msgid "SymLink"
+msgstr ""
+
+#: ../emelfm.c:271 ../menu.c:272 ../menu.c:294
+msgid "Delete"
+msgstr ""
+
+#: ../emelfm.c:272
+msgid "MkDir"
+msgstr ""
+
+#: ../emelfm.c:273
+msgid "File Info"
+msgstr ""
+
+#: ../emelfm.c:274
+msgid "Refresh"
+msgstr ""
+
+#: ../emelfm.c:275
+msgid "Configure"
+msgstr ""
+
+#: ../emelfm.c:276
+msgid "Quit"
+msgstr ""
+
+#: ../emelfm.c:282
+msgid "Image Files"
+msgstr ""
+
+#: ../emelfm.c:283
+msgid "Source Code Files"
+msgstr ""
+
+#: ../emelfm.c:284
+msgid "Object Files"
+msgstr ""
+
+#: ../emelfm.c:285
+msgid "HTML Documents"
+msgstr ""
+
+#: ../emelfm.c:286
+msgid "Plain Tarballs"
+msgstr ""
+
+#: ../emelfm.c:287
+msgid "Gzip Tarballs"
+msgstr ""
+
+#: ../emelfm.c:288
+msgid "Bzip2 Tarballs"
+msgstr ""
+
+#: ../emelfm.c:289
+msgid "ZIP Archives"
+msgstr ""
+
+#: ../emelfm.c:290
+msgid "RPM Packages"
+msgstr ""
+
+#: ../emelfm.c:291
+msgid "Adobe Acrobat Documents"
+msgstr ""
+
+#: ../emelfm.c:292
+msgid "PostScript Documents"
+msgstr ""
+
+#: ../emelfm.c:293
+msgid "Text Documents"
+msgstr ""
+
+#: ../emelfm.c:311
+msgid "Find SUID and SGID files"
+msgstr ""
+
+#: ../emelfm.c:312
+msgid "Find which RPM this came from"
+msgstr ""
+
+#: ../emelfm.c:313
+msgid "Print"
+msgstr ""
+
+#: ../emelfm.c:314
+msgid "Make Patch"
+msgstr ""
+
+#: ../emelfm.c:320
+msgid "Disk Usage of selected files"
+msgstr ""
+
+#: ../emelfm.c:321
+msgid "Available disk space"
+msgstr ""
+
+#: ../emelfm.c:322
+msgid "Memory information"
+msgstr ""
+
+#: ../emelfm.c:323
+msgid "Open an Xterm"
+msgstr ""
+
+#: ../emelfm.c:325
+msgid "su %{Enter Command:}; echo \"done. Press Enter\"; read"
+msgstr ""
+
+#: ../emelfm.c:326
+msgid "Execute a command as root"
+msgstr ""
+
+#: ../emelfm.c:411
+msgid "Type 'keys' to print a list of the current keyboard shortcuts\n"
+msgstr ""
+
+#: ../file_info_dialog.c:60 ../utils.c:65
+msgid "Unable to open pipe for file command\n"
+msgstr ""
+
+#: ../file_info_dialog.c:92 ../ownership_dialog.c:139
+#: ../permissions_dialog.c:210
+#, c-format
+msgid "Filename: %s"
+msgstr ""
+
+#: ../file_info_dialog.c:103
+msgid "File Type: Symbolic Link"
+msgstr ""
+
+#: ../file_info_dialog.c:115
+#, c-format
+msgid "Link To: %s"
+msgstr ""
+
+#: ../file_info_dialog.c:120
+msgid "Link To: Couldn't Resolve Link"
+msgstr ""
+
+#: ../file_info_dialog.c:145
+#, c-format
+msgid "File Type: %s"
+msgstr ""
+
+#: ../file_info_dialog.c:150
+msgid "File Type: Directory"
+msgstr ""
+
+#: ../file_info_dialog.c:155
+msgid "File Type: Character Device"
+msgstr ""
+
+#: ../file_info_dialog.c:160
+msgid "File Type: Block Device"
+msgstr ""
+
+#: ../file_info_dialog.c:165
+msgid "File Type: FIFO Pipe"
+msgstr ""
+
+#: ../file_info_dialog.c:170
+msgid "File Type: Socket"
+msgstr ""
+
+#: ../file_info_dialog.c:175
+msgid "File Type: Unknown"
+msgstr ""
+
+#: ../file_info_dialog.c:181
+#, c-format
+msgid "Size: %d bytes"
+msgstr ""
+
+#: ../file_info_dialog.c:184
+#, c-format
+msgid "Size: %.2f Kbytes"
+msgstr ""
+
+#: ../file_info_dialog.c:187
+#, c-format
+msgid "Size: %.2f Mbytes"
+msgstr ""
+
+#: ../file_info_dialog.c:196 ../ownership_dialog.c:149
+msgid "User: "
+msgstr ""
+
+#: ../file_info_dialog.c:209 ../ownership_dialog.c:155
+msgid "Group: "
+msgstr ""
+
+#: ../file_info_dialog.c:223
+msgid "Permissions: "
+msgstr ""
+
+#: ../file_info_dialog.c:233
+msgid "Accessed: "
+msgstr ""
+
+#: ../file_info_dialog.c:238
+msgid "Modified: "
+msgstr ""
+
+#: ../file_info_dialog.c:243
+msgid "Changed: "
+msgstr ""
+
+#: ../file_info_dialog.c:246 ../view_dialog.c:88
+msgid "Close"
+msgstr ""
+
+#: ../filelist.c:115
+msgid "That directory does not exist\n"
+msgstr ""
+
+#: ../filelist.c:120
+msgid "You do not have read access on that directory\n"
+msgstr ""
+
+#: ../filelist.c:642
+msgid "Something is going wrong with the auto-refresh. Exit quickly\n"
+msgstr ""
+
+#: ../filelist.c:645
+msgid ""
+"Something is going wrong with the auto-refresh.\n"
+"Please send a bug report to author\n"
+msgstr ""
+
+#: ../filelist.c:727
+#, c-format
+msgid "Unable to open directory: %s\n"
+msgstr ""
+
+#: ../filelist.c:777
+#, c-format
+msgid "%d bytes"
+msgstr ""
+
+#: ../filelist.c:782
+#, c-format
+msgid "%.2f Kbytes"
+msgstr ""
+
+#: ../filelist.c:787
+#, c-format
+msgid "%.2f Mbytes"
+msgstr ""
+
+#: ../filename_filter_dialog.c:37
+msgid "Invalid filename pattern\n"
+msgstr ""
+
+#: ../filename_filter_dialog.c:90
+msgid "Filename Filter: "
+msgstr ""
+
+#: ../filename_filter_dialog.c:97 ../plugins/glob.c:153
+msgid "Example: *.c,*.h"
+msgstr ""
+
+#: ../filename_filter_dialog.c:100 ../plugins/glob.c:156
+msgid "Invert"
+msgstr ""
+
+#: ../filename_filter_dialog.c:103 ../plugins/glob.c:158
+msgid "Case Sensitive"
+msgstr ""
+
+#: ../filename_filter_dialog.c:107
+msgid "Show files that DO NOT match the given mask"
+msgstr ""
+
+#: ../fileops.c:250
+msgid "Something went wrong in op_with_ow_check\n"
+msgstr ""
+
+#: ../fileops.c:405
+msgid "----end-of-output----\n"
+msgstr ""
+
+#: ../filetype_action_dialog.c:118
+msgid "Name (optional): "
+msgstr ""
+
+#: ../filetype_dialog.c:148
+msgid "Extensions field cannot be blank\n"
+msgstr ""
+
+#: ../filetype_dialog.c:155
+msgid "At least one action is required\n"
+msgstr ""
+
+#: ../filetype_dialog.c:245
+msgid "Description:"
+msgstr ""
+
+#: ../filetype_dialog.c:247
+msgid "Extension(s):"
+msgstr ""
+
+#: ../filetype_dialog.c:307
+msgid "Set Default"
+msgstr ""
+
+#: ../filetype_dialog.c:311
+msgid "Done"
+msgstr ""
+
+#: ../fileview.c:170 ../interface_callbacks.c:37
+msgid "Environment variable 'HOME' not set."
+msgstr ""
+
+#: ../fileview.c:619
+msgid ""
+"Left Click: Maximize/Minimize File View\n"
+"Right Click: Sync Dirs"
+msgstr ""
+
+#: ../fileview.c:632
+msgid "Show/Hide hidden files"
+msgstr ""
+
+#: ../fileview.c:654
+msgid "Left Click: Up Dir   Right Click: Home"
+msgstr ""
+
+#: ../init_filetype_dialog.c:114
+msgid ""
+"What would you like to do with this file?\n"
+"\n"
+msgstr ""
+
+#: ../init_filetype_dialog.c:115
+#, c-format
+msgid ""
+"Filename:  %s\n"
+"Extension: %s"
+msgstr ""
+
+#: ../init_filetype_dialog.c:125
+msgid "Create a new filetype for this extension"
+msgstr ""
+
+#: ../init_filetype_dialog.c:127
+msgid "Add this extension to an existing filetype"
+msgstr ""
+
+#: ../init_filetype_dialog.c:129 ../open_query_dialog.c:87
+msgid "Enter a command to Open with"
+msgstr ""
+
+#: ../init_filetype_dialog.c:131 ../open_query_dialog.c:89
+msgid "View File"
+msgstr ""
+
+#: ../key_binding_dialog.c:186
+msgid "Key: "
+msgstr ""
+
+#: ../key_binding_dialog.c:191
+msgid "Ctrl"
+msgstr ""
+
+#: ../key_binding_dialog.c:193
+msgid "Alt"
+msgstr ""
+
+#: ../key_binding_dialog.c:195
+msgid "Shift"
+msgstr ""
+
+#: ../key_binding_dialog.c:206
+msgid "Interface: "
+msgstr ""
+
+#: ../menu.c:91
+msgid "File does not have an extension\n"
+msgstr ""
+
+#: ../menu.c:108
+msgid "Filetype not found.\n"
+msgstr ""
+
+#: ../menu.c:184
+msgid "Add Bookmark"
+msgstr ""
+
+#: ../menu.c:185
+msgid "Edit Bookmarks"
+msgstr ""
+
+#: ../menu.c:187
+msgid "_Bookmarks"
+msgstr ""
+
+#: ../menu.c:191
+msgid "Filename Filter"
+msgstr ""
+
+#: ../menu.c:192
+msgid "Size Filter"
+msgstr ""
+
+#: ../menu.c:193
+msgid "Date Filter"
+msgstr ""
+
+#: ../menu.c:195
+msgid "Filter Directories"
+msgstr ""
+
+#: ../menu.c:198
+msgid "Remove All Filters"
+msgstr ""
+
+#: ../menu.c:199
+msgid "_Filters"
+msgstr ""
+
+#: ../menu.c:217
+msgid "Edit Plugins..."
+msgstr ""
+
+#: ../menu.c:237
+msgid "Edit User Commands..."
+msgstr ""
+
+#: ../menu.c:260 ../menu.c:279
+msgid "File Info..."
+msgstr ""
+
+#: ../menu.c:261 ../menu.c:280
+msgid "Permissions..."
+msgstr ""
+
+#: ../menu.c:262 ../menu.c:281
+msgid "User/Group..."
+msgstr ""
+
+#: ../menu.c:264 ../menu.c:286
+msgid "Rename..."
+msgstr ""
+
+#: ../menu.c:266 ../menu.c:288
+msgid "Copy As..."
+msgstr ""
+
+#: ../menu.c:268 ../menu.c:290
+msgid "Move As..."
+msgstr ""
+
+#: ../menu.c:270 ../menu.c:292
+msgid "SymLink As..."
+msgstr ""
+
+#: ../menu.c:271 ../menu.c:293
+msgid "MkDir..."
+msgstr ""
+
+#: ../menu.c:282
+msgid "Properties"
+msgstr ""
+
+#: ../menu.c:295
+msgid "Operations"
+msgstr ""
+
+#: ../menu.c:312 ../menu.c:334
+msgid "Open"
+msgstr ""
+
+#: ../menu.c:313
+msgid "Open with..."
+msgstr ""
+
+#: ../menu.c:314
+msgid "View"
+msgstr ""
+
+#: ../menu.c:316 ../menu.c:363
+msgid "Choose action"
+msgstr ""
+
+#: ../menu.c:318 ../menu.c:365
+msgid "Edit filetype..."
+msgstr ""
+
+#: ../menu.c:323 ../menu.c:344 ../menu.c:370 ../permissions_dialog.c:255
+msgid "User"
+msgstr ""
+
+#: ../menu.c:328 ../menu.c:349 ../menu.c:375
+msgid "Configure..."
+msgstr ""
+
+#: ../menu.c:335
+msgid "Open in Other Panel"
+msgstr ""
+
+#: ../menu.c:337
+msgid "Mount"
+msgstr ""
+
+#: ../menu.c:338
+msgid "UnMount"
+msgstr ""
+
+#: ../menu.c:355
+msgid "Execute"
+msgstr ""
+
+#: ../menu.c:356
+msgid "Execute with args..."
+msgstr ""
+
+#: ../menu.c:358
+msgid "Execute in xterm"
+msgstr ""
+
+#: ../menu.c:360
+msgid "Execute in xterm with args..."
+msgstr ""
+
+#: ../open_query_dialog.c:77
+msgid "What would you like to do with this file?\n"
+msgstr ""
+
+#: ../open_query_dialog.c:78
+#, c-format
+msgid "Filename:  %s"
+msgstr ""
+
+#: ../ownership_dialog.c:143
+#, c-format
+msgid "Permissions: %s"
+msgstr ""
+
+#: ../ownership_dialog.c:227 ../permissions_dialog.c:294
+msgid "Recurse Directories"
+msgstr ""
+
+#: ../ownership_dialog.c:231 ../permissions_dialog.c:298
+msgid "Apply To All"
+msgstr ""
+
+#: ../permissions_dialog.c:97
+msgid "Something fucked up. Exit quickly.\n"
+msgstr ""
+
+#: ../permissions_dialog.c:218
+#, c-format
+msgid "User: %s"
+msgstr ""
+
+#: ../permissions_dialog.c:223
+#, c-format
+msgid "User: %d"
+msgstr ""
+
+#: ../permissions_dialog.c:230
+#, c-format
+msgid "Group: %s"
+msgstr ""
+
+#: ../permissions_dialog.c:235
+#, c-format
+msgid "Group: %d"
+msgstr ""
+
+#: ../permissions_dialog.c:239
+msgid "File Permissions"
+msgstr ""
+
+#: ../permissions_dialog.c:249
+msgid "Read"
+msgstr ""
+
+#: ../permissions_dialog.c:250
+msgid "Write"
+msgstr ""
+
+#: ../permissions_dialog.c:251
+msgid "Exec"
+msgstr ""
+
+#: ../permissions_dialog.c:252
+msgid "Special"
+msgstr ""
+
+#: ../permissions_dialog.c:259
+msgid "Set UID"
+msgstr ""
+
+#: ../permissions_dialog.c:266
+msgid "Set GID"
+msgstr ""
+
+#: ../permissions_dialog.c:269
+msgid "Other"
+msgstr ""
+
+#: ../permissions_dialog.c:273
+msgid "Sticky"
+msgstr ""
+
+#: ../permissions_dialog.c:275
+msgid "Action:"
+msgstr ""
+
+#: ../permissions_dialog.c:284
+msgid "Set"
+msgstr ""
+
+#: ../plugin_info_dialog.c:78 ../user_command_dialog.c:92
+msgid "Name: "
+msgstr ""
+
+#: ../plugin_info_dialog.c:79
+msgid "Description: "
+msgstr ""
+
+#: ../plugin_info_dialog.c:80 ../plugins/pack.c:117
+msgid "Filename: "
+msgstr ""
+
+#: ../plugin_info_dialog.c:86
+msgid "Show in popup menu?"
+msgstr ""
+
+#: ../size_filter_dialog.c:42 ../size_filter_dialog.c:107
+#: ../size_filter_dialog.c:117 ../size_filter_dialog.c:125
+msgid "Bigger Than"
+msgstr ""
+
+#: ../size_filter_dialog.c:51 ../size_filter_dialog.c:138
+#: ../size_filter_dialog.c:149
+msgid "Bytes"
+msgstr ""
+
+#: ../size_filter_dialog.c:53 ../size_filter_dialog.c:139
+#: ../size_filter_dialog.c:155
+msgid "KBytes"
+msgstr ""
+
+#: ../size_filter_dialog.c:97
+msgid "Size Filter: "
+msgstr ""
+
+#: ../size_filter_dialog.c:108 ../size_filter_dialog.c:121
+msgid "Smaller Than"
+msgstr ""
+
+#: ../size_filter_dialog.c:140 ../size_filter_dialog.c:161
+msgid "MBytes"
+msgstr ""
+
+#: ../toolbar_button_dialog.c:124
+msgid "Tooltip: "
+msgstr ""
+
+#: ../user_prompt.c:34
+msgid "Invalid input\n"
+msgstr ""
+
+#: ../utils.c:175
+msgid "No files selected\n"
+msgstr ""
+
+#: ../utils.c:200
+msgid "No files selected in other pane\n"
+msgstr ""
+
+#: ../utils.c:227
+msgid "No matching '}' found in action text.\n"
+msgstr ""
+
+#: ../view_dialog.c:53
+msgid "Unable to open file for reading: "
+msgstr ""
+
+#: ../window.c:151
+#, c-format
+msgid "Welcome to emelFM - Version %s"
+msgstr ""
+
+#: ../window.c:198
+msgid "Ready"
+msgstr ""
+
+#: ../plugins/clone.c:39
+msgid ""
+"This allows you to copy a file\n"
+"to the current directory rather\n"
+"than the opposite directory.\n"
+"\n"
+"Enter New Filename: "
+msgstr ""
+
+#: ../plugins/for_each.c:32
+msgid ""
+"Macros:\n"
+"%f = Filename\n"
+"%d = Active Directory\n"
+"%D = Inactive Directory\n"
+"%{Prompt message} = Prompt user for input\n"
+"\n"
+"Enter an action to execute on each\n"
+"selected file:"
+msgstr ""
+
+#: ../plugins/glob.c:130
+msgid "Glob Select: "
+msgstr ""
+
+#: ../plugins/glob.c:161
+msgid "Select files that DO NOT match the given mask"
+msgstr ""
+
+#: ../plugins/pack.c:116
+msgid "Archive Options: "
+msgstr ""
+
+#: ../plugins/pack.c:123
+msgid ".tar.gz"
+msgstr ""
+
+#: ../plugins/pack.c:124
+msgid ".tar.bz2"
+msgstr ""
+
+#: ../plugins/pack.c:125
+msgid ".tar"
+msgstr ""
+
+#: ../plugins/pack.c:126
+msgid ".zip"
+msgstr ""
+
+#: ../plugins/pack.c:130
+msgid "Pack"
+msgstr ""
+
+#: ../plugins/rename_ext.c:112
+msgid ""
+"This allows you to replace substrings\n"
+"in filenames with new strings.\n"
+"\n"
+"Example: (From: .jpg  To: .jpeg)"
+msgstr ""
+
+#: ../plugins/rename_ext.c:121
+msgid "From: "
+msgstr ""
+
+#: ../plugins/rename_ext.c:127
+msgid "To: "
+msgstr ""
+
+#: ../plugins/rename_ext.c:133
+msgid "Apply to all files in directory"
+msgstr ""
+
+#: ../plugins/unpack.c:93
+#, c-format
+msgid "Repack Package: %s"
+msgstr ""

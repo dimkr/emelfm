@@ -1,0 +1,8 @@
+Installation
+~~~~~~~~~~~~
+make
+make install
+
+* If you need to install to someplace other than /usr/local, edit the file
+  Makefile.common and change PREFIX to wherever you want to install.
+

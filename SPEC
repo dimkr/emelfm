@@ -1,0 +1,35 @@
+Summary: File manager using the two-pane design and Gtk+
+Name: emelfm
+Version: 0.9.2
+Release: 1
+Copyright: GPL
+Group: unsorted
+
+%description
+emelFM is a file manager that implements the popular two-pane design. It
+features a simple GTK+ interface, a flexible filetyping scheme, and a built-in
+command line for executing commands without opening an xterm.
+
+%build
+make
+
+%install
+make install
+
+%files
+/usr/local/bin/emelfm
+/usr/local/share/emelfm/docs/help.txt
+/usr/local/share/emelfm/plugins/clone.so
+/usr/local/share/emelfm/plugins/copy_to_clipboard.so
+/usr/local/share/emelfm/plugins/du.so
+/usr/local/share/emelfm/plugins/for_each.so
+/usr/local/share/emelfm/plugins/glob.so
+/usr/local/share/emelfm/plugins/pack.so
+/usr/local/share/emelfm/plugins/rename_ext.so
+/usr/local/share/emelfm/plugins/sort_by_ext.so
+/usr/local/share/emelfm/plugins/view.so
+/usr/local/share/emelfm/plugins/unpack.so
+
+%doc README
+%doc COPYING
+%doc ChangeLog

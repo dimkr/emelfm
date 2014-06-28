@@ -1,0 +1,42 @@
+The following macros are available in the "Command:" entry 
+
+Macros:
+%f = Selected filenames in Active Directory
+%F = Full pathnames of files selected in Inactive Directory
+%d = Active Directory
+%D = Inactive Directory
+%{Prompt message} = Prompt user for input
+
+Prefixing a command with 'x' will open an xterm to execute the command.
+Prefixing a command with 'su' will open an xterm and su to root to execute the
+command.
+Appending an '&' to an action will cause emelFM to discard the output of the
+command. (By default, emelFM will capture the output and print it to the output
+window)
+
+Examples:
+
+  x rpm -qlip %f | less
+
+This opens an xterm and executes an rpm query command and pipes the output
+to 'less'. If the output were not piped to 'less', the xterm would exit after
+the query finished and the user would not be able to see the results for very
+long.
+
+  su rpm -Uvh %f
+
+This opens an xterm and su's to root, prompting for the root password. Then it
+executes the RPM install command which would probably fail if done as a normal
+user.
+
+  tar xzvf %f -C %D &
+
+This unpacks a tarball from the active directory into the inactive directory.
+Because of the '&' at the end, emelFM will *not* capture the output.
+
+  diff -c %f %F > %{Filename for patch:}
+
+This runs the diff command to create a patch between the selected files,
+prompting for the filename for the patch.
+
+

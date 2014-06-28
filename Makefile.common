@@ -1,0 +1,13 @@
+PREFIX = /usr/local
+BIN_DIR = $(PREFIX)/bin
+LOCALEDIR = $(PREFIX)/share/locale
+PLUGINS_DIR = $(PREFIX)/share/emelfm/plugins
+DOC_DIR = $(PREFIX)/share/emelfm/docs
+
+NLS = -DENABLE_NLS
+GTK_INCLUDE = `gtk-config --cflags`
+GTK_LIB = `gtk-config --libs`
+GLIB_LIB = `glib-config --libs gthread`
+CC = gcc -O2 -Wall
+#CC = gcc -g -Wall
+

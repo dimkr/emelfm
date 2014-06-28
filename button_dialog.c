@@ -25,10 +25,8 @@ static GtkWidget *dialog;
 static GtkWidget *label_entry;
 static GtkWidget *action_entry;
 static GtkWidget *system_combo;
-static GtkWidget *plugin_combo;
 static GtkWidget *shell_radio_button;
 static GtkWidget *system_radio_button;
-static GtkWidget *plugin_radio_button;
 
 static void
 ok_cb(GtkWidget *widget, Button **button)
@@ -47,11 +45,6 @@ ok_cb(GtkWidget *widget, Button **button)
   {
     g_snprintf((*button)->action, sizeof((*button)->action), "SYSTEM_%s",
             gtk_entry_get_text(GTK_ENTRY(GTK_COMBO(system_combo)->entry)));
-  }
-  else
-  {
-    g_snprintf((*button)->action, sizeof((*button)->action), "PLUGIN:%s",
-            gtk_entry_get_text(GTK_ENTRY(GTK_COMBO(plugin_combo)->entry)));
   }
 
   gtk_widget_destroy(dialog);
@@ -93,7 +86,6 @@ shell_radio_cb(GtkWidget *widget, gpointer data)
 {
   gtk_widget_set_sensitive(action_entry, TRUE);
   gtk_widget_set_sensitive(system_combo, FALSE);
-  gtk_widget_set_sensitive(plugin_combo, FALSE);
   gtk_widget_grab_focus(action_entry);
 }
 
@@ -102,17 +94,7 @@ system_radio_cb(GtkWidget *widget, gpointer data)
 {
   gtk_widget_set_sensitive(action_entry, FALSE);
   gtk_widget_set_sensitive(system_combo, TRUE);
-  gtk_widget_set_sensitive(plugin_combo, FALSE);
   gtk_widget_grab_focus(GTK_COMBO(system_combo)->entry);
-}
-
-static void
-plugin_radio_cb(GtkWidget *widget, gpointer data)
-{
-  gtk_widget_set_sensitive(action_entry, FALSE);
-  gtk_widget_set_sensitive(system_combo, FALSE);
-  gtk_widget_set_sensitive(plugin_combo, TRUE);
-  gtk_widget_grab_focus(GTK_COMBO(plugin_combo)->entry);
 }
 
 void
@@ -145,9 +127,6 @@ create_button_dialog(Button **button)
   system_radio_button = add_radio_button_to_table(table, _("System: "),
                gtk_radio_button_group(GTK_RADIO_BUTTON(shell_radio_button)),
                FALSE, system_radio_cb, NULL, 0, 1, 1, 2);
-  plugin_radio_button = add_radio_button_to_table(table, _("Plugin: "),
-               gtk_radio_button_group(GTK_RADIO_BUTTON(shell_radio_button)),
-               FALSE, plugin_radio_cb, NULL, 0, 1, 2, 3);
 
   action_entry = add_entry_to_table(table, "", 1, 2, 0, 1);
 
@@ -163,25 +142,6 @@ create_button_dialog(Button **button)
   free_glist_data(&tmp);
   tmp = NULL;
 
-  plugin_combo = gtk_combo_new();
-  gtk_table_attach_defaults(GTK_TABLE(table), plugin_combo, 1, 2, 2, 3);
-  gtk_entry_set_editable(GTK_ENTRY(GTK_COMBO(plugin_combo)->entry), FALSE);
-  gtk_widget_show(plugin_combo);
-
-  for (tmp2 = cfg.plugins; tmp2 != NULL; tmp2 = tmp2->next)
-  {
-    Plugin *p = tmp2->data;
-    tmp = g_list_append(tmp, g_strdup(p->name));
-  }
-  if (tmp != NULL)
-  {
-    gtk_combo_set_popdown_strings(GTK_COMBO(plugin_combo), tmp);
-    free_glist_data(&tmp);
-    tmp = NULL;
-  }
-  else
-    gtk_widget_set_sensitive(plugin_radio_button, FALSE);
-
   if (*button != NULL)
   {
     gtk_entry_set_text(GTK_ENTRY(label_entry), (*button)->label);
@@ -190,29 +150,18 @@ create_button_dialog(Button **button)
       gtk_entry_set_text(GTK_ENTRY(GTK_COMBO(system_combo)->entry),
                          (*button)->action + 7);
       gtk_widget_set_sensitive(action_entry, FALSE);
-      gtk_widget_set_sensitive(plugin_combo, FALSE);
       gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(system_radio_button), TRUE);
-    }
-    else if (strncmp((*button)->action, "PLUGIN:", 7) == 0)
-    {
-      gtk_entry_set_text(GTK_ENTRY(GTK_COMBO(plugin_combo)->entry),
-                         (*button)->action + 7);
-      gtk_widget_set_sensitive(action_entry, FALSE);
-      gtk_widget_set_sensitive(system_combo, FALSE);
-      gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(plugin_radio_button), TRUE);
     }
     else
     {
       gtk_entry_set_text(GTK_ENTRY(action_entry), (*button)->action);
       gtk_widget_set_sensitive(system_combo, FALSE);
-      gtk_widget_set_sensitive(plugin_combo, FALSE);
       gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(shell_radio_button), TRUE);
     }
   }
   else
   {
     gtk_widget_set_sensitive(system_combo, FALSE);
-    gtk_widget_set_sensitive(plugin_combo, FALSE);
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(shell_radio_button), TRUE);
   }
 

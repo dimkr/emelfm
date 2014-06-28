@@ -26,11 +26,9 @@ static GtkWidget *key_entry;
 static GtkWidget *action_entry;
 static GtkWidget *system_combo;
 static GtkWidget *if_combo;
-static GtkWidget *plugin_combo;
 static GtkWidget *shell_radio_button;
 static GtkWidget *system_radio_button;
 static GtkWidget *if_radio_button;
-static GtkWidget *plugin_radio_button;
 static GtkWidget *ctrl_check;
 static GtkWidget *alt_check;
 static GtkWidget *shift_check;
@@ -71,11 +69,6 @@ ok_cb(GtkWidget *widget, KeyBinding **kb)
   {
     g_snprintf((*kb)->action, sizeof((*kb)->action), "INTERFACE:%s",
             gtk_entry_get_text(GTK_ENTRY(GTK_COMBO(if_combo)->entry)));
-  }
-  else
-  {
-    g_snprintf((*kb)->action, sizeof((*kb)->action), "PLUGIN:%s",
-            gtk_entry_get_text(GTK_ENTRY(GTK_COMBO(plugin_combo)->entry)));
   }
 
   gtk_widget_destroy(dialog);
@@ -131,7 +124,6 @@ shell_radio_cb(GtkWidget *widget, gpointer data)
   gtk_widget_set_sensitive(action_entry, TRUE);
   gtk_widget_set_sensitive(system_combo, FALSE);
   gtk_widget_set_sensitive(if_combo, FALSE);
-  gtk_widget_set_sensitive(plugin_combo, FALSE);
   gtk_widget_grab_focus(action_entry);
 }
 
@@ -141,7 +133,6 @@ system_radio_cb(GtkWidget *widget, gpointer data)
   gtk_widget_set_sensitive(action_entry, FALSE);
   gtk_widget_set_sensitive(system_combo, TRUE);
   gtk_widget_set_sensitive(if_combo, FALSE);
-  gtk_widget_set_sensitive(plugin_combo, FALSE);
   gtk_widget_grab_focus(GTK_COMBO(system_combo)->entry);
 }
 
@@ -151,18 +142,7 @@ if_radio_cb(GtkWidget *widget, gpointer data)
   gtk_widget_set_sensitive(action_entry, FALSE);
   gtk_widget_set_sensitive(system_combo, FALSE);
   gtk_widget_set_sensitive(if_combo, TRUE);
-  gtk_widget_set_sensitive(plugin_combo, FALSE);
   gtk_widget_grab_focus(GTK_COMBO(if_combo)->entry);
-}
-
-static void
-plugin_radio_cb(GtkWidget *widget, gpointer data)
-{
-  gtk_widget_set_sensitive(action_entry, FALSE);
-  gtk_widget_set_sensitive(system_combo, FALSE);
-  gtk_widget_set_sensitive(if_combo, FALSE);
-  gtk_widget_set_sensitive(plugin_combo, TRUE);
-  gtk_widget_grab_focus(GTK_COMBO(plugin_combo)->entry);
 }
 
 void
@@ -204,9 +184,6 @@ create_key_binding_dialog(KeyBinding **kb)
   if_radio_button = gtk_radio_button_new_with_label(
                gtk_radio_button_group(GTK_RADIO_BUTTON(shell_radio_button)),
                _("Interface: "));
-  plugin_radio_button = gtk_radio_button_new_with_label(
-               gtk_radio_button_group(GTK_RADIO_BUTTON(shell_radio_button)),
-               _("Plugin: "));
 
   gtk_signal_connect(GTK_OBJECT(shell_radio_button), "clicked",
                      GTK_SIGNAL_FUNC(shell_radio_cb), NULL);
@@ -214,18 +191,14 @@ create_key_binding_dialog(KeyBinding **kb)
                      GTK_SIGNAL_FUNC(system_radio_cb), NULL);
   gtk_signal_connect(GTK_OBJECT(if_radio_button), "clicked",
                      GTK_SIGNAL_FUNC(if_radio_cb), NULL);
-  gtk_signal_connect(GTK_OBJECT(plugin_radio_button), "clicked",
-                     GTK_SIGNAL_FUNC(plugin_radio_cb), NULL);
 
   gtk_widget_show(shell_radio_button);
   gtk_widget_show(system_radio_button);
   gtk_widget_show(if_radio_button);
-  gtk_widget_show(plugin_radio_button);
 
   gtk_table_attach_defaults(GTK_TABLE(table), shell_radio_button, 0, 1, 0, 1);
   gtk_table_attach_defaults(GTK_TABLE(table), system_radio_button, 0, 1, 1, 2);
   gtk_table_attach_defaults(GTK_TABLE(table), if_radio_button, 0, 1, 2, 3);
-  gtk_table_attach_defaults(GTK_TABLE(table), plugin_radio_button, 0, 1, 3, 4);
 
   action_entry = add_entry_to_table(table, "", 1, 2, 0, 1);
 
@@ -251,24 +224,9 @@ create_key_binding_dialog(KeyBinding **kb)
   gtk_combo_set_popdown_strings(GTK_COMBO(if_combo), tmp);
   free_glist_data(&tmp);
 
-  plugin_combo = gtk_combo_new();
-  gtk_table_attach_defaults(GTK_TABLE(table), plugin_combo, 1, 2, 3, 4);
-  gtk_entry_set_editable(GTK_ENTRY(GTK_COMBO(plugin_combo)->entry), FALSE);
-  gtk_widget_show(plugin_combo);
-
-  for (tmp2 = cfg.plugins; tmp2 != NULL; tmp2 = tmp2->next)
-  {
-    Plugin *p = tmp2->data;
-    tmp = g_list_append(tmp, g_strdup(p->name));
-  }
-  gtk_combo_set_popdown_strings(GTK_COMBO(plugin_combo), tmp);
-  free_glist_data(&tmp);
-  tmp = NULL;
-
   gtk_widget_set_sensitive(action_entry, FALSE);
   gtk_widget_set_sensitive(system_combo, FALSE);
   gtk_widget_set_sensitive(if_combo, FALSE);
-  gtk_widget_set_sensitive(plugin_combo, FALSE);
 
   if (*kb != NULL)
   {
@@ -294,14 +252,6 @@ create_key_binding_dialog(KeyBinding **kb)
       gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(if_radio_button), TRUE);
       gtk_widget_set_sensitive(if_combo, TRUE);
       gtk_widget_grab_focus(GTK_COMBO(system_combo)->entry);
-    }
-    else if (strncmp((*kb)->action, "PLUGIN:", 7) == 0)
-    {
-      gtk_entry_set_text(GTK_ENTRY(GTK_COMBO(plugin_combo)->entry),
-                        (*kb)->action+7);
-      gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(plugin_radio_button), TRUE);
-      gtk_widget_set_sensitive(plugin_combo, TRUE);
-      gtk_widget_grab_focus(GTK_COMBO(plugin_combo)->entry);
     }
     else
     {

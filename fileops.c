@@ -271,21 +271,6 @@ exec_in_xterm(gchar *command)
 }
 
 gint
-exec_as_root(gchar *command)
-{
-  gchar *args[6];
-
-  args[0] = cfg.xterm_command;
-  args[1] = "-e";
-  args[2] = "su";
-  args[3] = "-c";
-  args[4] = command;
-  args[5] = NULL;
-
-  return execute(args);
-}
-
-gint
 exec_and_capture_output(gchar **args)
 {
   gint file_pipes[2];

@@ -145,12 +145,6 @@ exec_filetype_action(gchar *action)
 
   g_return_if_fail(action != NULL);
 
-  if (strncmp(action, "PLUGIN:", 7) == 0)
-  {
-    do_plugin_action(NULL, get_plugin_by_name(action+7));
-    return;
-  }
-
   if (strchr(action, '%') == NULL)
   { /* There wasn't a macro found in the action */
     GList *tmp, *base;

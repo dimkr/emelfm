@@ -120,17 +120,6 @@ typedef struct _SystemOp
   GtkSignalFunc func;
 } SystemOp;
 
-typedef struct _Plugin
-{
-  gchar filename[PATH_MAX+NAME_MAX];
-  gchar *name;
-  gchar *description;
-  gboolean show_in_menu;
-  gboolean load;
-  GModule *module;
-  void (*plugin_cb)();
-} Plugin;
-
 typedef struct _FileTypeMenu
 {
   GtkWidget *actions_menu;
@@ -197,7 +186,6 @@ typedef struct _App
   GtkWidget *main_menu;
   GtkWidget *dir_menu;
   GtkWidget *exec_menu;
-  GtkWidget *plugins_menu;
   GtkWidget *user_command_menu;
   GtkWidget *drag_op_menu;
   FileTypeMenu main_ft_menu; /* need two separate filetype menus since */
@@ -238,7 +226,6 @@ typedef struct _Config
   gint auto_refresh_enabled;
   guint auto_refresh_id;
   guint check_config_id;
-  GList *plugins;
   GList *buttons;
   GList *filetypes;
   GList *bookmarks;
@@ -359,13 +346,6 @@ extern FileType *get_filetype_for_ext(gchar *ext);
 extern void add_filetype(gchar *ext, gchar *prog, gchar *desc);
 extern void exec_filetype_action(gchar *action);
 
-/* Plugins */
-extern void destroy_plugin(Plugin *p);
-extern void unload_all_plugins();
-extern Plugin *load_plugin(gchar *filename);
-extern void do_plugin_action(GtkWidget *widget, Plugin *p);
-extern Plugin *get_plugin_by_name(gchar *name);
-
 /* Interface callbacks */
 extern void updir_cb(GtkWidget *widget);
 extern void cd_home(GtkWidget *widget);
@@ -376,7 +356,6 @@ extern void toggle_hidden_cb(GtkWidget *widget);
 extern void toggle_output_window_cb(GtkWidget *widget);
 extern void goto_command_line_cb(GtkWidget *widget);
 extern void show_menu_cb(GtkWidget *widget);
-extern void show_plugins_menu_cb(GtkWidget *widget);
 extern void show_user_menu_cb(GtkWidget *widget);
 
 /* Callbacks */
@@ -456,7 +435,6 @@ extern GtkWidget *create_filelist_menu_bar(FileView *view);
 extern GtkWidget *create_main_menu_bar();
 extern void create_menus();
 extern void show_menu(guint button, guint32 time);
-extern void show_plugins_menu(guint button, guint32 time);
 extern void show_user_command_menu(guint button, guint32 time);
 extern void load_bookmarks();
 
@@ -508,7 +486,6 @@ extern void create_user_command_dialog(UserCommand **command);
 extern void create_toolbar_button_dialog(ToolbarButton **tb);
 extern void create_button_dialog(Button **button);
 extern void create_key_binding_dialog(KeyBinding **kb);
-extern void create_plugin_info_dialog(Plugin **p);
 extern void create_open_query_dialog(gchar *filename);
 
 /* Config Functions */
@@ -521,7 +498,6 @@ extern void write_user_commands_file();
 extern void write_toolbar_file();
 extern void write_keys_file();
 extern void write_buttons_file();
-extern void write_plugins_file();
 extern void write_config_file();
 extern gboolean read_filetypes_file();
 extern gboolean read_bookmarks_file();
@@ -529,7 +505,6 @@ extern gboolean read_user_commands_file();
 extern gboolean read_toolbar_file();
 extern gboolean read_keys_file();
 extern gboolean read_buttons_file();
-extern gboolean read_plugins_file();
 extern gboolean read_config_file();
 
 #endif /* __EMELFM_H__ */

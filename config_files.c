@@ -114,7 +114,6 @@ check_config_files(gpointer data)
       read_toolbar_file();
       read_keys_file();
       read_buttons_file();
-      read_plugins_file();
       cfg.config_mtime = stat_buf.st_mtime;
       recreate_main_window();
     }
@@ -504,65 +503,6 @@ read_keys_file()
     strncpy(kb->action, s, sizeof(kb->action));
 
     cfg.key_bindings = g_list_append(cfg.key_bindings, kb);
-  }
-  fclose(f);
-
-  return TRUE;
-}
-
-void
-write_plugins_file()
-{
-  FILE *f;
-  gchar filename[PATH_MAX+NAME_MAX];
-  GList *tmp;
-
-  g_snprintf(filename, sizeof(filename), "%s/plugins", cfg.config_dir);
-  if ((f = fopen(filename, "w")) == NULL)
-  {
-    fprintf(stderr, "Unable to open plugins file for writing\n");
-    return;
-  }
-
-  for (tmp = cfg.plugins; tmp != NULL; tmp = tmp->next)
-  {
-    Plugin *p = tmp->data;
-
-    fprintf(f, "%s:%s\n", p->filename, (p->show_in_menu ? "TRUE" : "FALSE"));
-  }
-  fclose(f);
-}
-
-gint
-read_plugins_file()
-{
-  FILE *f;
-  gchar filename[PATH_MAX+NAME_MAX];
-  gchar plugin_path[PATH_MAX+NAME_MAX], *s;
-  Plugin *p;
-
-  g_snprintf(filename, sizeof(filename), "%s/plugins", cfg.config_dir);
-  if ( (f = fopen(filename, "r")) == NULL )
-    return FALSE;
-
-  unload_all_plugins();
-  while ( fgets(plugin_path, sizeof(plugin_path), f) )
-  {
-    chomp(plugin_path);
-    if ((s = strrchr(plugin_path, ':')) != NULL)
-    {
-      *s++ = '\0';
-      if ((p = load_plugin(plugin_path)) != NULL)
-      {
-        p->show_in_menu = STREQ(s, "TRUE");
-        cfg.plugins = g_list_append(cfg.plugins, p);
-      }
-    }
-    else
-    {
-      if ((p = load_plugin(plugin_path)) != NULL)
-        cfg.plugins = g_list_append(cfg.plugins, p);
-    }
   }
   fclose(f);
 

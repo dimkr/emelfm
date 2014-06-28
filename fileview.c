@@ -235,9 +235,7 @@ mouse_click_cb(GtkWidget *widget, GdkEventButton *event, FileView *view)
       focus_row(view, row, FALSE, FALSE, TRUE);
     }
 
-    if (event->state & GDK_SHIFT_MASK)
-      show_plugins_menu(event->button, event->time);
-    else if (event->state & GDK_CONTROL_MASK)
+    if (event->state & GDK_CONTROL_MASK)
       show_user_command_menu(event->button, event->time);
     else
       show_menu(event->button, event->time);

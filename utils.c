@@ -299,8 +299,6 @@ do_command(gchar *command)
 
   if (strncmp(command, "SYSTEM_", 7) == 0)
     exec_system_command(command);
-  else if (strncmp(command, "PLUGIN:", 7) == 0)
-    do_plugin_action(NULL, get_plugin_by_name(command+7));
   else if (strncmp(command, "INTERFACE:", 10) == 0)
     exec_interface_op(command);
   else if ((command_copy = expand_macros(command, NULL)) != NULL)
@@ -308,8 +306,6 @@ do_command(gchar *command)
     command = command_copy->str;
     if ((strncmp(command, "x ", 2) == 0) && (strlen(command) > 2))
       exec_in_xterm(command+2);
-    else if ((strncmp(command, "su ", 3) == 0) && (strlen(command) > 3))
-      exec_as_root(command+3);
     else
     {
       if (command[strlen(command)-1] == '&')

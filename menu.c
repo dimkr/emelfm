@@ -164,13 +164,6 @@ edit_user_menu_cb(GtkWidget *widget)
   create_config_dialog(USER_COMMANDS);
 }
 
-/* Plugins Menu Callbacks */
-static void
-edit_plugins_cb(GtkWidget *widget)
-{
-  create_config_dialog(PLUGINS);
-}
-
 /* */
 GtkWidget *
 create_filelist_menu_bar(FileView *view)
@@ -205,25 +198,6 @@ create_filelist_menu_bar(FileView *view)
   }
 
   return menu_bar;
-}
-
-static GtkWidget *
-create_plugins_menu()
-{
-  GList *tmp;
-  GtkWidget *menu;
-
-  menu = gtk_menu_new();
-  add_menu_item(menu, _("Edit Plugins..."), edit_plugins_cb, NULL);
-  add_menu_separator(menu);
-
-  for (tmp = cfg.plugins; tmp != NULL; tmp = tmp->next)
-  {
-    Plugin *p = tmp->data;
-    if (p->show_in_menu)
-      add_menu_item(menu, p->name, do_plugin_action, p);
-  }
-  return menu;
 }
 
 static GtkWidget *
@@ -302,7 +276,6 @@ create_menus()
 {
   GtkWidget *menu_item;
 
-  app.plugins_menu = create_plugins_menu();
   app.user_command_menu = create_user_command_menu();
 
   /* Standard Popup Menu) */
@@ -322,8 +295,6 @@ create_menus()
 
   menu_item = add_menu_item(app.main_menu, _("User"), NULL, NULL);
   gtk_menu_item_set_submenu(GTK_MENU_ITEM(menu_item), app.user_command_menu);
-  menu_item = add_menu_item(app.main_menu, _("Plugins"), NULL, NULL);
-  gtk_menu_item_set_submenu(GTK_MENU_ITEM(menu_item), app.plugins_menu);
   add_menu_separator(app.main_menu);
   add_menu_item(app.main_menu, _("Configure..."), configure_cb, NULL);
 
@@ -343,8 +314,6 @@ create_menus()
 
   menu_item = add_menu_item(app.dir_menu, _("User"), NULL, NULL);
   gtk_menu_item_set_submenu(GTK_MENU_ITEM(menu_item), create_user_command_menu());
-  menu_item = add_menu_item(app.dir_menu, _("Plugins"), NULL, NULL);
-  gtk_menu_item_set_submenu(GTK_MENU_ITEM(menu_item), create_plugins_menu());
   add_menu_separator(app.dir_menu);
   add_menu_item(app.dir_menu, _("Configure..."), configure_cb, NULL);
 
@@ -369,8 +338,6 @@ create_menus()
 
   menu_item = add_menu_item(app.exec_menu, _("User"), NULL, NULL);
   gtk_menu_item_set_submenu(GTK_MENU_ITEM(menu_item), create_user_command_menu());
-  menu_item = add_menu_item(app.exec_menu, _("Plugins"), NULL, NULL);
-  gtk_menu_item_set_submenu(GTK_MENU_ITEM(menu_item), create_plugins_menu());
   add_menu_separator(app.exec_menu);
   add_menu_item(app.exec_menu, _("Configure..."), configure_cb, NULL);
 }
@@ -476,13 +443,6 @@ show_menu(guint button, guint32 time)
 
   reenable_refresh();
   return;
-}
-
-void
-show_plugins_menu(guint button, guint32 time)
-{
-  gtk_menu_popup(GTK_MENU(app.plugins_menu), NULL, NULL, NULL, NULL,
-                 button, time);
 }
 
 void

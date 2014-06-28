@@ -91,12 +91,6 @@ show_menu_cb(GtkWidget *widget)
 }
 
 void
-show_plugins_menu_cb(GtkWidget *widget)
-{
-  show_plugins_menu(0, 0);
-}
-
-void
 show_user_menu_cb(GtkWidget *widget)
 {
   show_user_command_menu(0, 0);

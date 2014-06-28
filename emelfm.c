@@ -85,7 +85,6 @@ SystemOp interface_ops[] = {
   {"INTERFACE:Open/Close Output Window", toggle_output_window_cb},
   {"INTERFACE:Goto Command Line", goto_command_line_cb},
   {"INTERFACE:Menu", show_menu_cb},
-  {"INTERFACE:Plugins Menu", show_plugins_menu_cb},
   {"INTERFACE:User Menu", show_user_menu_cb},
 };
 
@@ -163,20 +162,6 @@ add_toolbar_button(gchar *label, gchar *action, gchar *tooltip,
 }
 
 static void
-add_plugin(gchar *filename, gboolean show_in_menu)
-{
-  Plugin *p;
-  gchar path[PATH_MAX+NAME_MAX];
-
-  g_snprintf(path, sizeof(path), "%s/%s", PLUGINS_DIR, filename);
-  if ((p = load_plugin(path)) != NULL)
-  {
-    p->show_in_menu = show_in_menu;
-    cfg.plugins = g_list_append(cfg.plugins, p);
-  }
-}
-
-static void
 add_key_binding(gint state, gchar *key_name, gchar *action)
 {
   KeyBinding *kb = g_new0(KeyBinding, 1);
@@ -191,22 +176,7 @@ add_key_binding(gint state, gchar *key_name, gchar *action)
 static void
 do_upgrade()
 {
-  gchar *message = _("A new plugin is available: Unpack\n"
-                     "Would you like to install this plugin?");
-  gint answer;
-
-  if (get_plugin_by_name("Unpack") != NULL)
-    return;
-
-  create_confirm_dialog(message, &answer, (YES | NO));
   gtk_main();
-  if (answer == YES)
-  {
-    add_plugin("unpack.so", TRUE);
-    create_confirm_dialog(
-_("You can use the Unpack plugin to open your archive files by\nadding it as an action to your archive filetypes\n"), NULL, OK);
-    gtk_main();
-  }
 }
 
 int 
@@ -342,13 +312,9 @@ main(int argc, char *argv[])
   if (!read_toolbar_file())
   {
     /* Setup the default toolbar */
-    add_toolbar_button("du", "PLUGIN:Disk Usage", _("Disk Usage of selected files"), TRUE);
     add_toolbar_button("df", "df", _("Available disk space"), FALSE);
     add_toolbar_button("free", "free", _("Memory information"), FALSE);
     add_toolbar_button("X", "xterm &", _("Open an Xterm"), FALSE);
-    add_toolbar_button("su",
-                    _("su %{Enter Command:}; echo \"done. Press Enter\"; read"),
-                    _("Execute a command as root"), FALSE);
   }
 
   if (!read_keys_file())
@@ -392,21 +358,6 @@ main(int argc, char *argv[])
     add_key_binding(GDK_CONTROL_MASK, "p", "INTERFACE:Menu");
     add_key_binding(GDK_CONTROL_MASK, "bracketleft", "INTERFACE:Plugins Menu");
     add_key_binding(GDK_CONTROL_MASK, "bracketright", "INTERFACE:User Menu");
-  }
-
-  if (!read_plugins_file())
-  {
-    /* Default Plugins */
-    add_plugin("glob.so", TRUE);
-    add_plugin("rename_ext.so", TRUE);
-    add_plugin("for_each.so", TRUE);
-    add_plugin("clone.so", TRUE);
-    add_plugin("pack.so", TRUE);
-    add_plugin("copy_to_clipboard.so", TRUE);
-    add_plugin("sort_by_ext.so", TRUE);
-    add_plugin("du.so", TRUE);
-    add_plugin("view.so", FALSE);
-    add_plugin("unpack.so", FALSE);
   }
 
   if (cfg.right_startup_dir != NULL)

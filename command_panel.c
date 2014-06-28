@@ -173,11 +173,6 @@ command_entered(GtkWidget *entry)
       exec_in_xterm(s+1);
       gtk_widget_grab_focus(entry);
     }
-    else if (STREQ(command_copy, "su") && strlen(command) > 2)
-    {
-      exec_as_root(s+1);
-      gtk_widget_grab_focus(entry);
-    }
     else if (STREQ(command_copy, "clear"))
     {
       gint n = gtk_text_get_length(GTK_TEXT(app.output_text));

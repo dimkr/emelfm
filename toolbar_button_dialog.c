@@ -26,8 +26,6 @@ static GtkWidget *title_entry;
 static GtkWidget *action_entry;
 static GtkWidget *tooltip_entry;
 static GtkWidget *shell_radio_button;
-static GtkWidget *plugin_radio_button;
-static GtkWidget *plugin_combo;
 
 static void
 ok_cb(GtkWidget *widget, ToolbarButton **tb)
@@ -43,11 +41,6 @@ ok_cb(GtkWidget *widget, ToolbarButton **tb)
   {
     strncpy((*tb)->action, gtk_entry_get_text(GTK_ENTRY(action_entry)),
             sizeof((*tb)->action));
-  }
-  else
-  {
-    g_snprintf((*tb)->action, sizeof((*tb)->action), "PLUGIN:%s",
-               gtk_entry_get_text(GTK_ENTRY(GTK_COMBO(plugin_combo)->entry)));
   }
 
   gtk_widget_destroy(dialog);
@@ -88,16 +81,7 @@ static void
 shell_radio_cb(GtkWidget *widget, gpointer data)
 {
   gtk_widget_set_sensitive(action_entry, TRUE);
-  gtk_widget_set_sensitive(plugin_combo, FALSE);
   gtk_widget_grab_focus(action_entry);
-}
-
-static void
-plugin_radio_cb(GtkWidget *widget, gpointer data)
-{
-  gtk_widget_set_sensitive(action_entry, FALSE);
-  gtk_widget_set_sensitive(plugin_combo, TRUE);
-  gtk_widget_grab_focus(GTK_COMBO(plugin_combo)->entry);
 }
 
 void
@@ -130,47 +114,14 @@ create_toolbar_button_dialog(ToolbarButton **tb)
   shell_radio_button = add_radio_button_to_table(table, _("Command: "), NULL,
                 FALSE, shell_radio_cb, NULL, 0, 1, 0, 1);
   action_entry = add_entry_to_table(table, "", 1, 2, 0, 1);
-  plugin_radio_button = add_radio_button_to_table(table, _("Plugin: "),
-               gtk_radio_button_group(GTK_RADIO_BUTTON(shell_radio_button)),
-               FALSE, plugin_radio_cb, NULL, 0, 1, 1, 2);
-
-  plugin_combo = gtk_combo_new();
-  gtk_table_attach_defaults(GTK_TABLE(table), plugin_combo, 1, 2, 1, 2);
-  gtk_entry_set_editable(GTK_ENTRY(GTK_COMBO(plugin_combo)->entry), FALSE);
-  gtk_widget_show(plugin_combo);
-  for (tmp = cfg.plugins; tmp != NULL; tmp = tmp->next)
-    strings = g_list_append(strings, ((Plugin *)tmp->data)->name);
-  if (strings != NULL)
-  {
-    gtk_combo_set_popdown_strings(GTK_COMBO(plugin_combo), strings);
-    g_list_free(strings);
-  }
-  else
-    gtk_widget_set_sensitive(plugin_radio_button, FALSE);
 
   if (*tb != NULL)
   {
     gtk_entry_set_text(GTK_ENTRY(title_entry), (*tb)->label);
     gtk_entry_set_text(GTK_ENTRY(tooltip_entry), (*tb)->tooltip);
-    if (strncmp((*tb)->action, "PLUGIN:", 7) == 0)
-    {
-      gtk_entry_set_text(GTK_ENTRY(GTK_COMBO(plugin_combo)->entry),
-                         (*tb)->action+7);
-      gtk_widget_set_sensitive(action_entry, FALSE);
-      gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(plugin_radio_button), TRUE);
-    }
-    else
-    {
-      gtk_entry_set_text(GTK_ENTRY(action_entry), (*tb)->action);
-      gtk_widget_set_sensitive(plugin_combo, FALSE);
-      gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(shell_radio_button), TRUE);
-    }
+    gtk_entry_set_text(GTK_ENTRY(action_entry), (*tb)->action);
   }
-  else
-  {
-    gtk_widget_set_sensitive(plugin_combo, FALSE);
-    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(shell_radio_button), TRUE);
-  }
+  gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(shell_radio_button), TRUE);
 
   gtk_signal_connect(GTK_OBJECT(title_entry), "activate", 
                      GTK_SIGNAL_FUNC(ok_cb), tb);

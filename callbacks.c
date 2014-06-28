@@ -642,7 +642,6 @@ quit_cb(GtkWidget *widget)
   write_toolbar_file();
   write_keys_file();
   write_buttons_file();
-  write_plugins_file();
   write_config_file();
   touch_config_dir();
   gtk_main_quit();

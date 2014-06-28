@@ -24,9 +24,6 @@
 static GtkWidget *dialog;
 static GtkWidget *name_entry;
 static GtkWidget *action_entry;
-static GtkWidget *plugin_combo;
-static GtkWidget *shell_radio_button;
-static GtkWidget *plugin_radio_button;
 static gchar **new_name;
 static gchar **new_action;
 
@@ -34,12 +31,7 @@ static void
 ok_cb(GtkWidget *widget)
 {
   *new_name = g_strdup(gtk_entry_get_text(GTK_ENTRY(name_entry)));
-
-  if (GTK_TOGGLE_BUTTON(shell_radio_button)->active)
-    *new_action = g_strdup(gtk_entry_get_text(GTK_ENTRY(action_entry)));
-  else
-    *new_action = g_strconcat("PLUGIN:", gtk_entry_get_text(GTK_ENTRY(
-                              GTK_COMBO(plugin_combo)->entry)), NULL);
+  *new_action = g_strdup(gtk_entry_get_text(GTK_ENTRY(action_entry)));
 
   gtk_widget_destroy(dialog);
   gtk_main_quit();
@@ -76,22 +68,6 @@ delete_event_cb(GtkWidget *widget)
    */
 }
 
-static void
-shell_radio_cb(GtkWidget *widget, gpointer data)
-{
-  gtk_widget_set_sensitive(action_entry, TRUE);
-  gtk_widget_set_sensitive(plugin_combo, FALSE);
-  gtk_widget_grab_focus(action_entry);
-}
-
-static void
-plugin_radio_cb(GtkWidget *widget, gpointer data)
-{
-  gtk_widget_set_sensitive(action_entry, FALSE);
-  gtk_widget_set_sensitive(plugin_combo, TRUE);
-  gtk_widget_grab_focus(GTK_COMBO(plugin_combo)->entry);
-}
-
 void
 create_filetype_action_dialog(gchar *name, gchar *action,
                               gchar **arg1, gchar **arg2)
@@ -119,57 +95,12 @@ create_filetype_action_dialog(gchar *name, gchar *action,
   name_entry = add_entry_to_table(table, "", 1, 2, 0, 1);
 
   table = add_framed_table(dialog_vbox, _("Action: "), 2, 2, FALSE, 0);
-  shell_radio_button = gtk_radio_button_new_with_label(NULL, _("Command: "));
-  plugin_radio_button = gtk_radio_button_new_with_label(
-               gtk_radio_button_group(GTK_RADIO_BUTTON(shell_radio_button)),
-               _("Plugin: "));
-
-  gtk_signal_connect(GTK_OBJECT(shell_radio_button), "clicked",
-                     GTK_SIGNAL_FUNC(shell_radio_cb), NULL);
-  gtk_signal_connect(GTK_OBJECT(plugin_radio_button), "clicked",
-                     GTK_SIGNAL_FUNC(plugin_radio_cb), NULL);
-
-  gtk_widget_show(shell_radio_button);
-  gtk_widget_show(plugin_radio_button);
-
-  gtk_table_attach_defaults(GTK_TABLE(table), shell_radio_button, 0, 1, 0, 1);
-  gtk_table_attach_defaults(GTK_TABLE(table), plugin_radio_button, 0, 1, 1, 2);
 
   action_entry = add_entry_to_table(table, "", 1, 2, 0, 1);
 
-  plugin_combo = gtk_combo_new();
-  gtk_table_attach_defaults(GTK_TABLE(table), plugin_combo, 1, 2, 1, 2);
-  gtk_entry_set_editable(GTK_ENTRY(GTK_COMBO(plugin_combo)->entry), FALSE);
-  gtk_widget_show(plugin_combo);
-
-  for (tmp2 = cfg.plugins; tmp2 != NULL; tmp2 = tmp2->next)
-  {
-    Plugin *p = tmp2->data;
-    tmp = g_list_append(tmp, g_strdup(p->name));
-  }
-  if (tmp != NULL)
-  {
-    gtk_combo_set_popdown_strings(GTK_COMBO(plugin_combo), tmp);
-    free_glist_data(&tmp);
-    tmp = NULL;
-  }
-  else
-    gtk_widget_set_sensitive(plugin_radio_button, FALSE);
-
   gtk_entry_set_text(GTK_ENTRY(name_entry), name);
   gtk_widget_grab_focus(name_entry);
-  if (strncmp(action, "PLUGIN:", 7) == 0)
-  {
-    gtk_entry_set_text(GTK_ENTRY(GTK_COMBO(plugin_combo)->entry), action+7);
-    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(plugin_radio_button), TRUE);
-    gtk_widget_set_sensitive(action_entry, FALSE);
-  }
-  else
-  { 
-    gtk_entry_set_text(GTK_ENTRY(action_entry), action);
-    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(shell_radio_button), TRUE);
-    gtk_widget_set_sensitive(plugin_combo, FALSE);
-  }
+  gtk_entry_set_text(GTK_ENTRY(action_entry), action);
 
   gtk_signal_connect(GTK_OBJECT(name_entry), "activate", 
                      GTK_SIGNAL_FUNC(ok_cb), NULL);

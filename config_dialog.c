@@ -30,8 +30,6 @@ static GtkWidget *dialog;
 static GtkWidget *colorsel_dialog;
 static GtkWidget *fontsel_dialog;
 
-static GList *added_plugins, *removed_plugins;
-
 /* General Page 1 widgets */
 static GtkWidget *confirm_del_check;
 static GtkWidget *confirm_ow_check;
@@ -66,7 +64,6 @@ static GtkWidget *user_commands_clist;
 static GtkWidget *toolbar_clist;
 static GtkWidget *keys_clist;
 static GtkWidget *buttons_clist;
-static GtkWidget *plugins_clist;
 static GtkWidget *file_selection;
 static GtkWidget *column_checks[MAX_COLUMNS];
 
@@ -140,13 +137,6 @@ ok_cb(GtkWidget *button)
   free_glist_data(&cfg.buttons);
   cfg.buttons = clist_data_to_glist(buttons_clist);
 
-  free_glist_data(&cfg.plugins);
-  cfg.plugins = clist_data_to_glist(plugins_clist);
-  for (tmp = removed_plugins; tmp != NULL; tmp = tmp->next)
-    destroy_plugin((Plugin*)tmp->data);
-  g_list_free(removed_plugins);
-  g_list_free(added_plugins);
-
   for (i = 0; i < MAX_COLUMNS; i++)
     all_columns[i].is_visible = GTK_TOGGLE_BUTTON(column_checks[i])->active;
 
@@ -162,7 +152,6 @@ ok_cb(GtkWidget *button)
   write_toolbar_file();
   write_keys_file();
   write_buttons_file();
-  write_plugins_file();
   write_config_file();
   touch_config_dir();
 }
@@ -171,11 +160,6 @@ static void
 cancel_cb(GtkWidget *button)
 {
   GList *tmp;
-
-  free_glist_data(&removed_plugins);
-  for (tmp = added_plugins; tmp != NULL; tmp = tmp->next)
-    destroy_plugin((Plugin*)tmp->data);
-  g_list_free(added_plugins);
 
   free_clist_data(filetypes_clist);
   free_clist_data(buttons_clist);
@@ -453,99 +437,6 @@ edit_button_cb(GtkWidget *widget, GtkWidget *clist)
 }
 
 /*
- * Plugin Callbacks
- */
-static void
-add_plugin_ok_cb(GtkWidget *widget, GtkWidget *clist)
-{
-  Plugin *p;
-  gchar *buf[2];
-  gint row;
-
-  p = load_plugin(gtk_file_selection_get_filename(
-                  GTK_FILE_SELECTION(file_selection)));
-  if (p == NULL)
-  {
-    status_message("Unable to load module.\n");
-    gtk_widget_set_sensitive(dialog, TRUE);
-    gtk_widget_destroy(file_selection);
-    return;
-  }
-
-  buf[0] = p->name;
-  buf[1] = _("YES");
-  p->show_in_menu = TRUE;
-  row = gtk_clist_append(GTK_CLIST(clist), buf);
-  gtk_clist_set_row_data(GTK_CLIST(clist), row, p);
-  added_plugins = g_list_append(added_plugins, p);
-
-  gtk_widget_set_sensitive(dialog, TRUE);
-  gtk_widget_destroy(file_selection);
-}
-
-static void
-add_plugin_cancel_cb(GtkWidget *widget)
-{
-  gtk_widget_set_sensitive(dialog, TRUE);
-  gtk_widget_destroy(file_selection);
-}
-
-static void
-add_plugin_cb(GtkWidget *widget, GtkWidget *clist)
-{
-  gchar path[PATH_MAX];
-  file_selection = gtk_file_selection_new(
-                            _("Please select the module you want to add."));
-  g_snprintf(path, sizeof(path), "%s/", PLUGINS_DIR);
-  gtk_file_selection_set_filename(GTK_FILE_SELECTION(file_selection), path);
-
-  gtk_signal_connect(
-     GTK_OBJECT(GTK_FILE_SELECTION(file_selection)->ok_button), "clicked",
-     GTK_SIGNAL_FUNC(add_plugin_ok_cb), clist);
-  gtk_signal_connect(
-     GTK_OBJECT(GTK_FILE_SELECTION(file_selection)->cancel_button), "clicked",
-     GTK_SIGNAL_FUNC(add_plugin_cancel_cb), NULL);
-  gtk_widget_show(file_selection);
-  gtk_widget_set_sensitive(dialog, FALSE);
-}
-
-static void
-plugin_info_cb(GtkWidget *widget, GtkWidget *clist)
-{
-  Plugin *p;
-  gint selected_row;
-
-  if (GTK_CLIST(clist)->selection != NULL)
-    selected_row = (gint)GTK_CLIST(clist)->selection->data;
-  else
-    return;
-
-  gtk_widget_set_sensitive(dialog, FALSE);
-  p = gtk_clist_get_row_data(GTK_CLIST(clist), selected_row);
-  create_plugin_info_dialog(&p);
-  gtk_main();
-  gtk_clist_set_text(GTK_CLIST(clist), selected_row, 1,
-                    (p->show_in_menu ? "YES" : "NO"));
-  gtk_widget_set_sensitive(dialog, TRUE);
-}
-
-static void
-remove_plugin_cb(GtkWidget *widget, GtkWidget *clist)
-{
-  Plugin *p;
-  gint selected_row;
-
-  if (GTK_CLIST(clist)->selection != NULL)
-    selected_row = (gint)GTK_CLIST(clist)->selection->data;
-  else
-    return;
-
-  p = gtk_clist_get_row_data(GTK_CLIST(clist), selected_row);
-  removed_plugins = g_list_append(removed_plugins, p);
-  gtk_clist_remove(GTK_CLIST(clist), selected_row);
-}
-
-/*
  * Interface Page Callbacks
  */
 static GdkColor *_color;
@@ -790,8 +681,6 @@ create_config_dialog(gint page)
   gchar label_text[MAX_LEN];
   GList *tmp;
   gint i;
-
-  added_plugins = removed_plugins = NULL;
 
   dialog = gtk_dialog_new();
   dialog_vbox = GTK_DIALOG(dialog)->vbox;
@@ -1066,33 +955,6 @@ create_config_dialog(gint page)
   add_button(hbox, _("Edit"), TRUE, 5, edit_button_cb, buttons_clist);
   add_button(hbox, _("Remove"), TRUE, 5, clist_remove_cb, buttons_clist);
   
-  /* Plugins Tab */
-  vbox = add_page(notebook, _("Plugins"), config_clist);
-
-  titles[0] = _("Name");
-  titles[1] = _("Show in Menu");
-  plugins_clist = add_clist(vbox, 2, titles);
-  gtk_clist_set_column_width(GTK_CLIST(plugins_clist), 0, 200);
-
-  for (tmp = cfg.plugins; tmp != NULL; tmp = tmp->next)
-  {
-    Plugin *plugin = tmp->data;
-
-    buf[0] = plugin->name;
-    buf[1] = (plugin->show_in_menu ? _("YES") : _("NO"));
-    i = gtk_clist_append(GTK_CLIST(plugins_clist), buf);
-    gtk_clist_set_row_data(GTK_CLIST(plugins_clist), i,
-                           g_memdup(plugin, sizeof(Plugin)));
-  }
-
-  hbox = add_hbox(vbox, TRUE, 0, FALSE, 5);
-  add_button_with_icon(hbox, icon_up_xpm, TRUE, 5, clist_up_cb, plugins_clist);
-  add_button_with_icon(hbox, icon_down_xpm, TRUE, 5, clist_down_cb,
-                       plugins_clist);
-  add_button(hbox, _("Add"), TRUE, 5, add_plugin_cb, plugins_clist);
-  add_button(hbox, _("Info"), TRUE, 5, plugin_info_cb, plugins_clist);
-  add_button(hbox, _("Remove"), TRUE, 5, remove_plugin_cb, plugins_clist);
-
   /* Interface Page1 */
   vbox = add_page(notebook,_("Interface - Colors"), config_clist);
 
